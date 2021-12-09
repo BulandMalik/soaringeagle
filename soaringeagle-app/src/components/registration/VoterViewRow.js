@@ -1,14 +1,12 @@
-import { useState } from "react";
 import editLogo from '../../images/edit-16.ico';
-
 
 export const VoterViewRow = props => {
 
   console.log("VoterViewRow props:",props);
 
-  const handleOnChange = (position) => {
+  const handleOnClick = (event) => {
     //console.log("updatedCheckedState:",updatedCheckedState, " .... position:",position);
-    props.onChange(position);
+    props.onChange(event);
   };
 
   return (
@@ -27,11 +25,12 @@ export const VoterViewRow = props => {
       </td>
       <td>
         <input type="checkbox"
-                id={`delete-checkbox-${props.voter.id}`}
+                id={props.voter.id}
                 name={props.voter.id}
                 value={props.voter.id}
                 checked={props.checkedState[props.voter.id]}
-                onChange={() => handleOnChange(props.voter.id)}
+                //onChange={() => handleOnChange()}
+                onClick={handleOnClick}
         />
       </td>
     </tr>    

@@ -55,3 +55,20 @@ export const deleteVoter = async (voterId) => {
 
     return await res.json();
 }
+
+
+export const deleteVoters = (voterIds) => {
+
+    //voterIds.forEach(voterId => async () => {
+    const res = voterIds.map( async voterId => {
+        const res = await fetch(`http://localhost:3060/voters/${encodeURIComponent(voterId)}`, { 
+            method: 'DELETE',
+        });
+
+        //console.log("deleting voterid[",voterId,"], response [",res,"]");
+        return res.json();
+    });
+
+    console.log("response [",res,"]");
+    return res[0];
+}

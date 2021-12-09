@@ -1,4 +1,4 @@
-import { all, registerVoter, deleteVoter, replaceVoter } from "../apis/voters";
+import { all, registerVoter, deleteVoters, replaceVoter } from "../apis/voters";
 
 export const REFRESH_VOTERS_REQUEST_ACTION = "REFRESH_VOTERS_REQUEST_ACTION";
 export const REFRESH_VOTERS_DONE_ACTION = "REFRESH_VOTERS_DONE_ACTION";
@@ -65,10 +65,10 @@ export const createDeleteVoterRequestAction = () => ({type: DELETE_VOTER_REQUEST
 export const createDeleteVoterDoneAction = (voterId) => (
     {type: DELETE_VOTER_DONE_ACTION, payload: voterId}
 );
-export const deleteVoterFn = (voterId) => {
+export const deleteVoterFn = (voterIds) => {
     return dispatch => {
         dispatch(createDeleteVoterRequestAction());
-        return deleteVoter(voterId).then( voter => {
+        return deleteVoters(voterIds).then( res => {
             dispatch(refreshVoters());
         })
     };
