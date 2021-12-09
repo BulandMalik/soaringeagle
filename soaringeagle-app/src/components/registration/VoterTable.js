@@ -1,6 +1,8 @@
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from './VoterEditRow';
 
+import deleteLogo from '../../images/delete-16.ico';
+
 const tableHeaders=[
   ['Id','id'],
   ['First Name','firstName'],
@@ -34,7 +36,7 @@ export const VoterTable = props => {
             </button>
           </th>)}          
           <th>Actions</th>
-          <th>Delete</th>
+          <th><img src={deleteLogo} alt="Delete" /></th>
         </tr>
       </thead>
       <tbody>

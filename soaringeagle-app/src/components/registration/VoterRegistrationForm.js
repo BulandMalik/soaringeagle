@@ -1,5 +1,5 @@
 import { useForm } from "../../hooks/useForm";
-
+import saveLogo from '../../images/save-16.ico';
 
 export const VoterRegistrationForm = props => {
 
@@ -50,7 +50,7 @@ export const VoterRegistrationForm = props => {
     Phone:
     <input type="text" name="phone" value={voterRegistrationForm.phone} onChange={change} />
     </label>
-      <button type="button" onClick={submitCar}>{props.buttonText}</button>
+      <button type="button" onClick={submitCar}><img src={saveLogo} alt={props.buttonText} /></button>
     </form>
   );
 

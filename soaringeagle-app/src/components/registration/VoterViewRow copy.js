@@ -1,6 +1,6 @@
 import { useState } from "react";
 import editLogo from '../../images/edit-16.ico';
-
+import deleteLogo from '../../images/delete-16.ico';
 
 export const VoterViewRow = props => {
 
@@ -33,6 +33,8 @@ export const VoterViewRow = props => {
       <td>
         <button type="button"
           onClick={() => props.onEdit(props.voter.id)}><img src={editLogo} alt="Edit" /></button>
+        <button type="button"
+          onClick={() => props.onDelete(props.voter.id)}><img src={deleteLogo} alt="Edit" /></button>
       </td>
       <td>
         <input type="checkbox"
