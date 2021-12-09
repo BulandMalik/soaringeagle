@@ -1,0 +1,35 @@
+EagleCampers/EagleCamp/soaringeagle
+
+Mascot -> 
+
+    https://www.istockphoto.com/vector/eagle-flex-gm165746842-13160635
+    https://www.dreamstime.com/eagle-head-mascot-sports-team-logo-template-image120695604
+
+Motivational Slogan -> 
+
+    1. An eagle earns its honor from the storms it endures - Matshona Dhliwayo.
+    2. Don't quack like a duck, soar like an eagle. -Ken Blanchard.
+
+
+
+---------------------- Model
+
+
+Election
+    State Date
+    End Date
+    List of Questions
+
+Voters
+    first name
+    last name
+    address
+    county/city
+    birthdate
+    email
+    phone
+
+Ballots
+    List of Ballots
+        Each Ballot
+            List of Questions
