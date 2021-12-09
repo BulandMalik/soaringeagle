@@ -4,20 +4,11 @@ import editLogo from '../../images/edit-16.ico';
 
 export const VoterViewRow = props => {
 
-  //console.log("VoterViewRow props:",props);
-
-  const [checkedState, setCheckedState] = useState(
-    new Array(2).fill(false)
-  );
+  console.log("VoterViewRow props:",props);
 
   const handleOnChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-
-    setCheckedState(updatedCheckedState);
-
-    console.log("updatedCheckedState:",updatedCheckedState, " .... position:",position);
+    //console.log("updatedCheckedState:",updatedCheckedState, " .... position:",position);
+    props.onChange(position);
   };
 
   return (
@@ -39,7 +30,7 @@ export const VoterViewRow = props => {
                 id={`delete-checkbox-${props.voter.id}`}
                 name={props.voter.id}
                 value={props.voter.id}
-                checked={checkedState[props.voter.id]}
+                checked={props.checkedState[props.voter.id]}
                 onChange={() => handleOnChange(props.voter.id)}
         />
       </td>
