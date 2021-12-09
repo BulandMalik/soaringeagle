@@ -12,6 +12,7 @@ export const REPLACE_VOTER_DONE_ACTION = "REPLACE_VOTER_DONE_ACTION";
 export const DELETE_VOTER_REQUEST_ACTION = "DELETE_VOTER_REQUEST_ACTION";
 export const DELETE_VOTER_DONE_ACTION = "DELETE_VOTER_DONE_ACTION";
 
+export const EDIT_ACTION = "edit";
 export const CANCEL_ACTION = "cancel";
 export const SORT_ITEMS_ACTION = "sortItem";
 
@@ -73,6 +74,9 @@ export const deleteVoterFn = (voterId) => {
     };
 };
 
+export const createEditAction = (voterId) => (
+  { type: EDIT_ACTION, payload: {voterId} }
+);
 
 export const createCancelAction = () => (
     { type: CANCEL_ACTION }

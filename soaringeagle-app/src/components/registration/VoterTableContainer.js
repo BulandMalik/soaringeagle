@@ -10,8 +10,8 @@ export const VoterTableContainer = () => {
   return (
     <>
       <VoterTable voters={store.sortedVoters} editId={store.editId}
-        onEditVoter={store.replaceVoter} onDeleteVoter={store.deleteVoter}
-        onSaveVoter={store.registerVoter} onCancelVoter={store.cancelCar} 
+        onEdit={store.editVoter} onDelete={store.deleteVoter}
+        onSave={store.registerVoter} onCancel={store.cancelVoter} 
         onSort={store.sortVoters} sortCol={store.sortCol} sortDir={store.sortDir}/>
     </>
   );
