@@ -3,6 +3,7 @@
 import { useVotingToolStore } from "../../hooks/useVotingToolStore";
 
 import {VoterRegistrationForm} from "./VoterRegistrationForm";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 export const VoterRegistrationFormContainer = () => {
 
@@ -13,7 +14,9 @@ export const VoterRegistrationFormContainer = () => {
   return (
     <>
       <VoterRegistrationForm buttonText="Add Voter" onSubmitVoterRegistration={store.registerVoter} />
-    </>
+      <Link to={'/abc'}>
+    </Link>
+        </>
   );
 
 };
