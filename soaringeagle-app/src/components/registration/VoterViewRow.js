@@ -1,8 +1,14 @@
-
+import { useState } from "react";
+import editLogo from '../../images/edit-16.ico';
+import deleteLogo from '../../images/delete-16.ico';
 
 export const VoterViewRow = props => {
 
-  console.log("VoterViewRow props:",props);
+  //console.log("VoterViewRow props:",props);
+
+  const [checkedState, setCheckedState] = useState(
+    new Array(1).fill(false)
+  );
 
   return (
     <tr>
@@ -16,9 +22,9 @@ export const VoterViewRow = props => {
       <td>{props.voter.phone}</td>
       <td>
         <button type="button"
-          onClick={() => props.onEdit(props.voter.id)}>Edit</button>
+          onClick={() => props.onEdit(props.voter.id)}><img src={editLogo} alt="Edit" /></button>
         <button type="button"
-          onClick={() => props.onDelete(props.voter.id)}>Delete</button>
+          onClick={() => props.onDelete(props.voter.id)}><img src={deleteLogo} alt="Edit" /></button>
       </td>
     </tr>    
   );

@@ -1,5 +1,8 @@
 import { useForm } from "../../hooks/useForm";
 
+import saveLogo from '../../images/save-16.ico';
+import cancelLogo from '../../images/cancel-16.ico';
+
 export const VoterEditRow = props => {
 
   console.log("VoterEditRow props:",props);
@@ -38,9 +41,9 @@ export const VoterEditRow = props => {
       <td><input type="number" name="phone" value={voterForm.phone} onChange={change} /></td>
       <td>
         <button type="button"
-          onClick={saveVoter}>Save</button>
+          onClick={saveVoter}><img src={saveLogo} alt="Save" /></button>
         <button type="button"
-          onClick={cancelVoter}>Cancel</button>
+          onClick={cancelVoter}><img src={cancelLogo} alt="Cancel" /></button>
       </td>
     </tr>    
   );
