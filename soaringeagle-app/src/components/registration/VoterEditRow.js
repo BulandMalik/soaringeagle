@@ -2,6 +2,8 @@ import { useForm } from "../../hooks/useForm";
 
 export const VoterEditRow = props => {
 
+  console.log("VoterEditRow props:",props);
+
   const [ voterForm, change ] = useForm({
     firstName: props.voter.firstName,
     lastName: props.voter.lastName,
@@ -13,20 +15,20 @@ export const VoterEditRow = props => {
   });
 
   const saveVoter = () => {
-    props.onSaveCar({
+    props.onSave({
       ...voterForm,
       id: props.voter.id,
     });
   };
 
   const cancelVoter = () => {
-    props.onCancelCar(props.voter.id);
+    props.onCancel(props.voter.id);
   };  
 
 
   return (
     <tr>
-      <td>{props.car.id}</td>
+      <td>{props.voter.id}</td>
       <td><input type="text" name="firstName" value={voterForm.firstName} onChange={change} /></td>
       <td><input type="text" name="lastName" value={voterForm.lastName} onChange={change} /></td>
       <td><input type="text" name="address" value={voterForm.address} onChange={change} /></td>

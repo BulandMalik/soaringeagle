@@ -2,6 +2,8 @@
 
 export const VoterViewRow = props => {
 
+  console.log("VoterViewRow props:",props);
+
   return (
     <tr>
       <td>{props.voter.id}</td>
@@ -14,9 +16,9 @@ export const VoterViewRow = props => {
       <td>{props.voter.phone}</td>
       <td>
         <button type="button"
-          onClick={() => props.onEditCar(props.voter.id)}>Edit</button>
+          onClick={() => props.onEdit(props.voter.id)}>Edit</button>
         <button type="button"
-          onClick={() => props.onDeleteCar(props.voter.id)}>Delete</button>
+          onClick={() => props.onDelete(props.voter.id)}>Delete</button>
       </td>
     </tr>    
   );

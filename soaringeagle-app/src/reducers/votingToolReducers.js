@@ -1,5 +1,5 @@
 import { 
-    SORT_ITEMS_ACTION, CANCEL_ACTION, 
+    SORT_ITEMS_ACTION, CANCEL_ACTION, EDIT_ACTION,
     REFRESH_VOTERS_DONE_ACTION, REGISTER_VOTER_REQUEST_ACTION,
     REPLACE_VOTER_REQUEST_ACTION, DELETE_VOTER_REQUEST_ACTION
 } from '../actions/votersActions';
@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 
 export const registeredVotersReducer = ( registeredVoters = [], action) => {
 
-    console.log("registeredVotersReducer::",registeredVoters, ", action::",action);
+    //console.log("registeredVotersReducer::",registeredVoters, ", action::",action);
     switch (action.type) {
         case REFRESH_VOTERS_DONE_ACTION:
             return action.payload.registeredVoters;              
@@ -19,7 +19,7 @@ export const registeredVotersReducer = ( registeredVoters = [], action) => {
 
 export const itemEditReducer = ( itemId = -1, action) => {
 
-    //console.log("itemEditReducer::",itemId, ", action::",action);
+    console.log("itemEditReducer::",itemId, ", action::",action);
     switch (action.type) {
         case REGISTER_VOTER_REQUEST_ACTION:
         case REPLACE_VOTER_REQUEST_ACTION:
@@ -29,8 +29,8 @@ export const itemEditReducer = ( itemId = -1, action) => {
             //console.log("itemEditReducer --> -1");
             return -1;
         }
-        //case EDIT_ACTION:
-        //    return action.payload.itemId;
+        case EDIT_ACTION:
+            return action.payload.voterId;
         default:
             return itemId;            
     };
@@ -38,8 +38,8 @@ export const itemEditReducer = ( itemId = -1, action) => {
 
 export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, action) => {
 
-    console.log("itemsSortReducer::",action);
-    console.log("itemsSort B::",itemsSort);
+    //console.log("itemsSortReducer::",action);
+    //console.log("itemsSort B::",itemsSort);
     if (action.type === SORT_ITEMS_ACTION) {
 
         if (itemsSort.sortDir === 'asc') {

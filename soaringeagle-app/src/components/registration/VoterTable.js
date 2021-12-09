@@ -38,11 +38,11 @@ export const VoterTable = props => {
       </thead>
       <tbody>
         {props.voters.map(voter =>
-          props.editCarId === voter.id
+          props.editId === voter.id
             ? <VoterEditRow key={voter.id} voter={voter}
-                onSaveCar={props.onSaveCar} onCancelCar={props.onCancelCar} />
+                onSave={props.onSave} onCancel={props.onCancel} />
             : <VoterViewRow key={voter.id} voter={voter}
-                onEditCar={props.onEditCar} onDeleteCar={props.onDeleteCar} />)}
+                onEdit={props.onEdit} onDelete={props.onDelete} />)}
       </tbody>
     </table>
 

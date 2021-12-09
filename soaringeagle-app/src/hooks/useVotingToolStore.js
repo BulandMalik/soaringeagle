@@ -5,8 +5,8 @@ import { bindActionCreators } from "redux";
 import { sortedItemsSelector } from "../selectors/itemToolSelectors";
 
 import { 
-    createSortAction, createCancelAction,refreshVoters, 
-    registerVoterFn, deleteVoterFn, replaceVoterFn
+    createSortAction, createCancelAction, createEditAction,
+    refreshVoters, registerVoterFn, deleteVoterFn, replaceVoterFn
 } from "../actions/votersActions";
 
 export const useVotingToolStore = () => {
@@ -24,7 +24,8 @@ export const useVotingToolStore = () => {
     const actions = useMemo( () => bindActionCreators({
         refreshVoters,
         registerVoter: registerVoterFn,
-        editVoter: replaceVoterFn,
+        editVoter: createEditAction,
+        saveVoter: replaceVoterFn,
         deleteVoter: deleteVoterFn,
         cancelVoter: createCancelAction,
         sortVoters: createSortAction
