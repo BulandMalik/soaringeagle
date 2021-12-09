@@ -14,9 +14,7 @@ export const VoterRegistrationFormContainer = () => {
   return (
     <>
       <VoterRegistrationForm buttonText="Add Voter" onSubmitVoterRegistration={store.registerVoter} />
-      <Link to={'/abc'}>
-    </Link>
-        </>
+    </>
   );
 
 };
