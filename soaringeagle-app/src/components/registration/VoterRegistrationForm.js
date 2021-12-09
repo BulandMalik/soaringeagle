@@ -33,7 +33,7 @@ export const VoterRegistrationForm = props => {
 
 
   return (
-    <form>
+    <form className="voterreg">
       <label>
         First Name:
         <input type="text" name="firstName" value={voterRegistrationForm.firstName} onChange={change} />
