@@ -29,6 +29,26 @@
       "birthDate": 0,
       "email": 0,
       "phone": 0
+    },
+    {
+      "id": 6,
+      "firstName": "",
+      "lastName": 1900,
+      "address": "",
+      "city": 0,
+      "birthDate": 0,
+      "email": 0,
+      "phone": 0
+    },
+    {
+      "id": 7,
+      "firstName": "",
+      "lastName": 1900,
+      "address": "",
+      "city": 0,
+      "birthDate": 0,
+      "email": 0,
+      "phone": 0
     }
   ],
   "elections": [

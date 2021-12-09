@@ -1,5 +1,6 @@
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from './VoterEditRow';
+import { useState } from "react";
 
 import deleteLogo from '../../images/delete-16.ico';
 
@@ -26,6 +27,20 @@ export const VoterTable = props => {
     return '';
   };  
 
+  const [checkedState, setCheckedState] = useState(
+    new Array(props.voters.length).fill(0)
+  );
+
+  const handleOnChange = (position) => {
+    console.log("updatedCheckedState:",checkedState, " .... position:",position);
+
+    const updatedCheckedState = checkedState.filter( item => item === position);
+
+    console.log("updatedCheckedState:",updatedCheckedState, " .... position:",position);
+    setCheckedState(updatedCheckedState);
+  };
+
+
   return (
     <table>
       <thead>
@@ -36,7 +51,10 @@ export const VoterTable = props => {
             </button>
           </th>)}          
           <th>Actions</th>
-          <th><img src={deleteLogo} alt="Delete" /></th>
+          <th>
+            <button type="button"
+                onClick={() => props.onDelete(props.voter.id)}><img src={deleteLogo} alt="Edit" /></button>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -45,7 +63,7 @@ export const VoterTable = props => {
             ? <VoterEditRow key={voter.id} voter={voter}
                 onSave={props.onSave} onCancel={props.onCancel} />
             : <VoterViewRow key={voter.id} voter={voter}
-                onEdit={props.onEdit} onDelete={props.onDelete} />)}
+                onEdit={props.onEdit} onDelete={props.onDelete} checkedState={checkedState} onChange={handleOnChange}/>)}
       </tbody>
     </table>
 
