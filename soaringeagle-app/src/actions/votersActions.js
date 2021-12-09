@@ -68,7 +68,7 @@ export const createDeleteVoterDoneAction = (voterId) => (
 export const deleteVoterFn = (voterIds) => {
     return dispatch => {
         dispatch(createDeleteVoterRequestAction());
-        return deleteVoters(voterIds).then( res => {
+        return deleteVoters(voterIds).then( () => {
             dispatch(refreshVoters());
         })
     };

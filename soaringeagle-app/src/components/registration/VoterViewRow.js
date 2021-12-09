@@ -2,7 +2,7 @@ import editLogo from '../../images/edit-16.ico';
 
 export const VoterViewRow = props => {
 
-  console.log("VoterViewRow props:",props);
+  //console.log("VoterViewRow props:",props);
 
   const handleOnClick = (event) => {
     //console.log("updatedCheckedState:",updatedCheckedState, " .... position:",position);

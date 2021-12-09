@@ -4,7 +4,7 @@ import { VoterRegistrationFormContainer } from "./VoterRegistrationFormContainer
 
 export const RegistrationTool = (props) => {
 
-  console.log("RegistrationTool^^^^^^^^^^^^^^^^^^^^^^^^ props:",props);
+  //console.log("RegistrationTool^^^^^^^^^^^^^^^^^^^^^^^^ props:",props);
 
   return (
     <>

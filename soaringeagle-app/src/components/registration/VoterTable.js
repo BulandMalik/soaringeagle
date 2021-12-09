@@ -30,21 +30,24 @@ export const VoterTable = props => {
   const [checkedState, setCheckedState] = useState([]); //new Array(props.voters.length).fill(0)
 
   const handleOnChange = (event) => {
-    console.log("checkedState:",checkedState, " .... event Id:",event.target.id, ", event checked",event.target.checked);
+    //console.log("checkedState:",checkedState, " .... event Id:",event.target.id, ", event checked",event.target.checked);
 
     let updatedCheckedState = [...checkedState];
     if ( updatedCheckedState.includes(event.target.id) ) {
-        //event.target.checked ? updatedCheckedState.push(event.target.id) : "";
         if ( !event.target.checked ) {
           updatedCheckedState = updatedCheckedState.filter( checkedStateId => checkedStateId !== event.target.id);
         }
     }
     else updatedCheckedState.push(event.target.id);
-    
-    console.log("updatedCheckedState:",updatedCheckedState);
+
+    //console.log("updatedCheckedState:",updatedCheckedState);
     setCheckedState(updatedCheckedState);
   };
 
+  const onDelete = () => {
+    props.onDelete(checkedState)
+    setCheckedState([]);
+  }
 
   return (
     <table>
@@ -58,7 +61,7 @@ export const VoterTable = props => {
           <th>Actions</th>
           <th>
             <button type="button"
-                onClick={() => props.onDelete(checkedState)}><img src={deleteLogo} alt="Edit" /></button>
+                onClick={onDelete}><img src={deleteLogo} alt="Edit" /></button>
           </th>
         </tr>
       </thead>

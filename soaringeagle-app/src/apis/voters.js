@@ -59,16 +59,33 @@ export const deleteVoter = async (voterId) => {
 
 export const deleteVoters = (voterIds) => {
 
+    //let returnIds = [];
+    let promises = [];
+    voterIds.forEach(voterId => {
+        promises.push(new Promise( (resolve, reject) => {
+            fetch(`http://localhost:3060/voters/${encodeURIComponent(voterId)}`, { 
+                method: 'DELETE',
+            }).then( res => resolve(res) );            
+        }));
+    });
+    console.log("***************** promises ",promises,"");
+    return Promise.all(promises);
+}
+/*
+export const deleteVoters = (voterIds) => {
+
+    //let returnIds = [];
     //voterIds.forEach(voterId => async () => {
-    const res = voterIds.map( async voterId => {
+    const promise = voterIds.map( async voterId => {
         const res = await fetch(`http://localhost:3060/voters/${encodeURIComponent(voterId)}`, { 
             method: 'DELETE',
         });
 
-        //console.log("deleting voterid[",voterId,"], response [",res,"]");
-        return res.json();
+        const r = res.json();
+        console.log("deleting voterid[",voterId,"], response [",r,"]");
+        return voterId;
     });
 
-    console.log("response [",res,"]");
-    return res[0];
-}
+    console.log("***************** voterIds ",promise,"");
+    return promise;
+}*/

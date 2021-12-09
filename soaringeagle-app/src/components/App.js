@@ -12,7 +12,7 @@ import { Layout } from './Layout';
 
 export const App = (props) => {
 
-    console.log("^^^^^^^^^^^^^^^^^^^^^^^^ props:",props);
+    //console.log("^^^^^^^^^^^^^^^^^^^^^^^^ props:",props);
 
     return (
         <Router>
