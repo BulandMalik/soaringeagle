@@ -9,6 +9,8 @@ import {
     refreshVoters, registerVoterFn, deleteVoterFn, replaceVoterFn
 } from "../actions/votersActions";
 
+import { createVerifyAction, createStartVotingAction } from '../actions/ballotActions';
+
 export const useVotingToolStore = () => {
 
     const sortedVoters = useSelector( sortedItemsSelector );
@@ -19,6 +21,9 @@ export const useVotingToolStore = () => {
     console.log("editId::",editId);
     console.log("sortCol::",sortCol,", sortDir",sortDir);
 
+    const errorMessage = useSelector(state => state.errorMessage);
+    const showIDForm = useSelector(state => state.showIDForm);
+    
     const dispatch = useDispatch();
 
     const actions = useMemo( () => bindActionCreators({
@@ -28,7 +33,9 @@ export const useVotingToolStore = () => {
         saveVoter: replaceVoterFn,
         deleteVoter: deleteVoterFn,
         cancelVoter: createCancelAction,
-        sortVoters: createSortAction
+        sortVoters: createSortAction,
+        verify: createVerifyAction,
+        startVoting: createStartVotingAction,
     }, dispatch), [dispatch]);
 
     useEffect( () => {
@@ -40,6 +47,8 @@ export const useVotingToolStore = () => {
         editId,
         sortCol,
         sortDir,
+        errorMessage,
+        showIDForm,
         ...actions,
       };
 

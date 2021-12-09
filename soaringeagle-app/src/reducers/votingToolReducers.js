@@ -1,8 +1,10 @@
 import { 
     SORT_ITEMS_ACTION, CANCEL_ACTION, EDIT_ACTION,
     REFRESH_VOTERS_DONE_ACTION, REGISTER_VOTER_REQUEST_ACTION,
-    REPLACE_VOTER_REQUEST_ACTION, DELETE_VOTER_REQUEST_ACTION
+    REPLACE_VOTER_REQUEST_ACTION, DELETE_VOTER_REQUEST_ACTION,
 } from '../actions/votersActions';
+
+import { VERIFY_ACTION, START_VOTING_ACTION } from '../actions/ballotActions';
 
 import { combineReducers } from 'redux';
 
@@ -52,8 +54,30 @@ export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, 
     return itemsSort;
 }  
 
+export const errorMessageReducer = (errorMessage = '', action) => {
+    // console.log("errorMessageReducer", errorMessage);
+   
+    if(action.type === VERIFY_ACTION && !action.payload.result) {
+        return "User ID is NOT Valid !";
+    }
+    
+    return '';
+}
+
+export const showIDFormReducer = (showIDForm = false, action) => {
+    console.log("showIDFormReducer", action)
+    if(action.type === START_VOTING_ACTION && action.payload.showIDForm){
+        return true;
+    } else if(action.type === START_VOTING_ACTION){
+        return false;
+    }
+    return showIDForm;
+}
+
 export const votingToolReducer = combineReducers({
     registeredVoters: registeredVotersReducer, //state.registeredVoters are the argument to the reducer
     itemEditId: itemEditReducer,
     itemsSort: itemsSortReducer,
+    errorMessage: errorMessageReducer,
+    showIDForm: showIDFormReducer,
 });
