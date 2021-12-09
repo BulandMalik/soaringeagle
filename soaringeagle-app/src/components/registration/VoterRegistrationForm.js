@@ -1,24 +1,36 @@
 import { useForm } from "../../hooks/useForm";
 import addLogo from '../../images/add-16.ico';
+import { useHistory } from "react-router-dom";
+
 
 export const VoterRegistrationForm = props => {
 
   const [ voterRegistrationForm, change, resetVoterRegistrationForm ] = useForm({
     id: '',
     firstName: '',
-    lastName: 1900,
+    lastName: '',
     address: '',
-      city: 0,
-      birthDate: 0,
-      email: 0,
-      phone: 0,
+    city: '',
+    birthDate: '',
+    email: '',
+    phone: '',
   });
+
+
+  const history = useHistory();
+
+  const handleRoute = () =>{
+    history.push("/registration/list");
+  }
 
   const submitCar = () => {
     props.onSubmitVoterRegistration({ ...voterRegistrationForm });
 
     resetVoterRegistrationForm();
+
+    handleRoute();
   };
+
 
   return (
     <form>

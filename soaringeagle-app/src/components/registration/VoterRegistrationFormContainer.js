@@ -1,7 +1,6 @@
 
 //import { useCarToolStoreContext } from "../context/carToolStoreContext";
 import { useVotingToolStore } from "../../hooks/useVotingToolStore";
-
 import {VoterRegistrationForm} from "./VoterRegistrationForm";
 
 export const VoterRegistrationFormContainer = () => {
