@@ -1,0 +1,141 @@
+body {
+    font-family: arial;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    display: block;
+    padding: 2px;
+}
+
+.container {
+    position: fixed;
+
+    background-color: pink;
+
+    /* telling container to take full viewport*/
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    /*2 dimentional layout*/
+    display: grid;
+    /*1 fraction unit
+    70px - header
+    40px - nv bar
+    1fr - main/aside
+    40px - footer
+    -----4 rows
+    */
+    grid-template-rows: 70px 40px 1fr 40px;
+
+    /*
+    4fr - main - 80%
+    1fr - sidebar - 20%
+    -----2 cols
+    */
+    grid-template-columns: 4fr 1fr;
+
+    grid-template-areas: 
+        'header header'
+        'menu menu'
+        'content sidebar'
+        'footer footer';
+}
+
+/*select header child of container div*/
+.container > header {
+    grid-area: header;
+    background-color: navy;
+
+    padding-left: 10px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+
+    /*position in axis, major/minor*/
+    display: flex;
+
+    /* change major/minor axis*/
+    flex-direction: row;
+
+    /* major axis alignment*/
+    justify-content: flex-start;
+
+    /* minor axis alignment*/
+    align-items: center;
+}
+
+/*select header child of container div*/
+.container > nav {
+    grid-area: menu;
+    background-color: lightgray;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    /*flex-direction: row;*/
+}
+
+.menu-item {
+    padding: 2px 6px;
+    margin: 0;
+}
+
+.menu-item > a,
+.menu-tem > a:visited,
+.menu-item > a:active,
+.menu-item > a:hover {
+    color: black;
+}
+
+.menu-item > a,
+.menu-item > a:visited,
+.menu-item > a:active {
+    text-decoration: none;
+}
+
+.menu-item > a:hover {
+    text-decoration: underline;
+}
+
+.menu-item > a:active {
+    color: blue;
+}
+
+/*select header child of container div*/
+.container > main {
+    grid-area: content;
+    background-color: white;
+    padding: 10px;
+}
+
+/*select header child of container div*/
+.container > aside {
+    grid-area: sidebar;
+    background-color: orange;
+    padding: 10px;
+}
+
+/*select header child of container div*/
+.container > footer {
+    grid-area: footer;
+    background-color: navy;
+
+    padding-top: 8px;
+
+    display: grid;
+    justify-content: center;
+    
+    color: white;
+    font-size: 0.9rem;
+}

@@ -1,9 +1,9 @@
 {
     "voters": [
-        { "id": 1, "firstName": "Buland", "lastName": "Malik", "address": "1090 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" },
-        { "id": 2, "firstName": "Karen", "lastName": "Mao", "address": "1190 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" },
-        { "id": 3, "firstName": "Karen", "lastName": "Mao", "address": "1190 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" },
-        { "id": 4, "firstName": "Karen", "lastName": "Mao", "address": "1190 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" }
+        { "id": 1, "firstName": "Buland", "lastName": "Malik", "address": "1090 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "1912034569" },
+        { "id": 2, "firstName": "Karen", "lastName": "Mao", "address": "1190 Down Street", "city": "Moutain View", "birthdate": "01/10/1990", "email": "u@gmail.com", "phone": "0091203456" },
+        { "id": 3, "firstName": "Green", "lastName": "Belt", "address": "95 Quince Ave", "city": "Cupertino", "birthdate": "012/10/1980", "email": "sam@gmail.com", "phone": "0191203436" },
+        { "id": 4, "firstName": "Cha", "lastName": "Chu", "address": "25 Momroe ST", "city": "Santa Clara", "birthdate": "12/12/1995", "email": "a@gmail.com", "phone": "9120345609" }
     ],
     
     "elections": [
