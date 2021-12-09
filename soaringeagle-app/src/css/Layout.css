@@ -30,14 +30,14 @@ label {
     40px - footer
     -----4 rows
     */
-    grid-template-rows: 70px 40px 1fr 40px;
+    grid-template-rows: 70px 40px 1fr 30px;
 
     /*
     4fr - main - 80%
     1fr - sidebar - 20%
     -----2 cols
     */
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 5fr 1fr;
 
     grid-template-areas: 
         'header header'

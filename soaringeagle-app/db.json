@@ -7,7 +7,7 @@
       "city": "Cupertino",
       "birthdate": "012/10/1980",
       "email": "sam@gmail.com",
-      "phone": 9191203436,
+      "phone": 3191203436,
       "id": 3
     },
     {
@@ -19,6 +19,16 @@
       "email": "bmalik@yahoo.com",
       "phone": "9120345609",
       "id": 4
+    },
+    {
+      "id": 7,
+      "firstName": "",
+      "lastName": 1900,
+      "address": "",
+      "city": 0,
+      "birthDate": 0,
+      "email": 0,
+      "phone": 0
     }
   ],
   "elections": [
