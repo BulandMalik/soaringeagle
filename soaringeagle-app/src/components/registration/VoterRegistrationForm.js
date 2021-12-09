@@ -1,6 +1,8 @@
 import { useForm } from "../../hooks/useForm";
 import addLogo from '../../images/add-16.ico';
 import { useHistory } from "react-router-dom";
+import { Layout } from '../Layout';
+import {LayoutVoterReg} from "../LayoutVoterReg";
 
 
 export const VoterRegistrationForm = props => {
@@ -33,7 +35,7 @@ export const VoterRegistrationForm = props => {
 
 
   return (
-    <form>
+    <form className="voterreg">
       <label>
         First Name:
         <input type="text" name="firstName" value={voterRegistrationForm.firstName} onChange={change} />

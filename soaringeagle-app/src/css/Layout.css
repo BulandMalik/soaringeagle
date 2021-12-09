@@ -8,7 +8,39 @@ body {
 label {
     display: block;
     padding: 2px;
+    /*float: left;*/
+    /*width: 10em;*/
+    /*margin-right: 1em;*/
 }
+
+.voterreg > label {
+    display: block;
+    padding: 10px;
+    /*float: left;*/
+    /*width: 100%*/
+
+    /*width: 10em;*/
+    /*margin-right: 1em;*/
+}
+
+
+.voterreg > text {
+    /*display: block;*/
+    /*width: 10%;*/
+    /*padding: 2px;*/
+    /*float: right;*/
+    /*width: 10em;*/
+    /*margin-right: 1em;*/
+
+    width: 100%;
+    padding: 1px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 
 .container {
     position: fixed;
