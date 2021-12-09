@@ -1,43 +1,58 @@
 import { useForm } from '../hooks/useForm';
 
-export const CarForm = props => {
+export const VoterRegistrationForm = props => {
 
-  const [ carForm, change, resetCarForm ] = useForm({
-    make: '',
-    model: '',
-    year: 1900,
-    color: '',
-    price: 0,
+  const [ voterRegistrationForm, change, resetVoterRegistrationForm ] = useForm({
+    id: '',
+    firstName: '',
+    lastName: 1900,
+    address: '',
+      city: 0,
+      birthDate: 0,
+      email: 0,
+      phone: 0,
   });
 
   const submitCar = () => {
-    props.onSubmitCar({ ...carForm });
+    props.onSubmitCar({ ...voterRegistrationForm });
 
-    resetCarForm();
+    resetVoterRegistrationForm();
   };
 
   return (
     <form>
       <label>
         Make:
-        <input type="text" name="make" value={carForm.make} onChange={change} />
+        <input type="text" name="id" value={voterRegistrationForm.id} onChange={change} />
       </label>
       <label>
         Model:
-        <input type="text" name="model" value={carForm.model} onChange={change} />
+        <input type="text" name="firstName" value={voterRegistrationForm.firstName} onChange={change} />
       </label>
       <label>
         Year:
-        <input type="number" name="year" value={carForm.year} onChange={change} />
+        <input type="number" name="lastName" value={voterRegistrationForm.lastName} onChange={change} />
       </label>
       <label>
         Color:
-        <input type="text" name="color" value={carForm.color} onChange={change} />
+        <input type="text" name="address" value={voterRegistrationForm.address} onChange={change} />
       </label>
       <label>
         Price:
-        <input type="number" name="price" value={carForm.price} onChange={change} />
+        <input type="number" name="city" value={voterRegistrationForm.city} onChange={change} />
       </label>
+    <label>
+    Price:
+    <input type="number" name="birthDate" value={voterRegistrationForm.birthDate} onChange={change} />
+    </label>
+    <label>
+    Price:
+    <input type="number" name="email" value={voterRegistrationForm.email} onChange={change} />
+    </label>
+    <label>
+    Price:
+    <input type="number" name="phone" value={voterRegistrationForm.phone} onChange={change} />
+    </label>
       <button type="button" onClick={submitCar}>{props.buttonText}</button>
     </form>
   );
