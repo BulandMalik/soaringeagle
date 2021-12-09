@@ -19,6 +19,16 @@
       "email": "bmalik@yahoo.com",
       "phone": "9120345609",
       "id": 4
+    },
+    {
+      "id": 5,
+      "firstName": "",
+      "lastName": 1900,
+      "address": "",
+      "city": 0,
+      "birthDate": 0,
+      "email": 0,
+      "phone": 0
     }
   ],
   "elections": [

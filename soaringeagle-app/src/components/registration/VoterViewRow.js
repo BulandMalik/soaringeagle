@@ -7,7 +7,7 @@ export const VoterViewRow = props => {
   //console.log("VoterViewRow props:",props);
 
   const [checkedState, setCheckedState] = useState(
-    new Array(2).fill(false)
+    new Array(2).fill(0)
   );
 
   const handleOnChange = (position) => {
