@@ -7,4 +7,6 @@ Soaring Eagle team is 4 members team working on a FE Boot Camp Team Project. pro
 ## Motivational Slogan
 `Don't quack like a duck, soar like an eagle.` - Ken Blanchard.
 
-## 
+## Setup
+1. `npm i npm-run-all`
+2. 

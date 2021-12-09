@@ -1,0 +1,16 @@
+{
+    "voters": [
+        { "id": 1, "firstName": "Buland", "lastName": "Malik", "address": "1090 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" },
+        { "id": 2, "firstName": "Karen", "lastName": "Mao", "address": "1190 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" },
+        { "id": 3, "firstName": "Karen", "lastName": "Mao", "address": "1190 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" },
+        { "id": 4, "firstName": "Karen", "lastName": "Mao", "address": "1190 Greet Ave", "city": "Santa Clara", "birthdate": "01/10/1990", "email": "bu@gmail.com", "phone": "0091203456" }
+    ],
+    
+    "elections": [
+        { "id": 1, "questions": [
+            {"id": 1, "text": "should we allow boosters for eveeryone?", "clicked": ["y", "y"]},
+            {"id": 2, "text": "shoudl we give more tax breaks for covid impacted individuals/families?", "clicked": ["y","y","y","y"]}
+        ], "voters": [1,2,3,4] }
+    ]
+
+}
