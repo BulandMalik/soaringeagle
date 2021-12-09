@@ -1,24 +1,24 @@
 {
   "voters": [
     {
-      "id": 3,
       "firstName": "Green",
       "lastName": "Belt",
       "address": "95 Quince Ave",
       "city": "Cupertino",
       "birthdate": "012/10/1980",
       "email": "sam@gmail.com",
-      "phone": "0191203436"
+      "phone": 9191203436,
+      "id": 3
     },
     {
-      "id": 4,
-      "firstName": "Cha",
-      "lastName": "Chu",
+      "firstName": "Karen",
+      "lastName": "Mu",
       "address": "25 Momroe ST",
       "city": "Santa Clara",
       "birthdate": "12/12/1995",
-      "email": "a@gmail.com",
-      "phone": "9120345609"
+      "email": "bmalik@yahoo.com",
+      "phone": "9120345609",
+      "id": 4
     }
   ],
   "elections": [
@@ -28,7 +28,7 @@
         {
           "id": 1,
           "text": "should we allow boosters for eveeryone?",
-          "clicked": 2
+          "yesCount": 2
         },
         {
           "id": 2,
