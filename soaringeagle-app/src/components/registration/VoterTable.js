@@ -34,6 +34,7 @@ export const VoterTable = props => {
             </button>
           </th>)}          
           <th>Actions</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
