@@ -6,12 +6,12 @@ export const VoterRegistrationForm = props => {
   const [ voterRegistrationForm, change, resetVoterRegistrationForm ] = useForm({
     id: '',
     firstName: '',
-    lastName: 1900,
+    lastName: '',
     address: '',
-      city: 0,
-      birthDate: 0,
-      email: 0,
-      phone: 0,
+    city: '',
+    birthDate: '',
+    email: '',
+    phone: '',
   });
 
   const submitCar = () => {
