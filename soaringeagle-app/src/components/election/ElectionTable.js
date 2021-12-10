@@ -1,7 +1,7 @@
 import { useElectionToolReducerStore } from "../../hooks/useElectionToolReducerStore";
 import { ElectionViewRow } from "./ElectionViewRow";
 import { ElectionAddRow } from "./ElectionAddRow";
-
+import { ElectionNone } from "./ElectionNone";
 export const ElectionTable = () => {
     const {
         elections, questions,errorMessage,electionName,
@@ -68,11 +68,11 @@ export const ElectionTable = () => {
                         election.questions.map(question =>
                              <ElectionViewRow key={''+election.id+':'+question.id} election={election} question={question}    />))
                 }{questions.map((question,index) =>
-                           index===0?'':<ElectionAddRow key={'newQuestion'+index} rowID={index} questionID={index} questionText={question}   />)
+                           index===0?<ElectionNone key={'newQuestion'+index} />:<ElectionAddRow key={'newQuestion'+index} rowID={index} questionID={index} questionText={question}   />)
                     
                 }{questions.length>0
                     ?<ElectionAddRow key={'addRow'+questions.length} rowID={questions.length} questionID={-1} questionText={''} electionName={electionName} onQuestion={onQuestion} saveElection={saveElection}  />
-                    :''             
+                    :<ElectionNone key={'addRow'+questions.length} />             
                 }</tbody>
             </table>
             <br />
