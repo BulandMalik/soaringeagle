@@ -12,7 +12,9 @@ export const ToolHeader = (props) => {
           <span>Don't quack like a duck, soar like an eagle. -Ken Blanchard</span>
         </div>
       </div>
-      <h1>{props.headerText}</h1>
+      <div>
+        <h1>{props.headerText}</h1>
+      </div>
     </header>
   );
 
