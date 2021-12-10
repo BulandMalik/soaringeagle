@@ -32,11 +32,14 @@ export const errorMessageReducer = (errorMessage = '', action) => {
 export const electionNameReducer = (electionName = '', action) => {
 
     
-    if (!(action.type === ELECTION_NAME_ACTION)) {
-        return '';
-    }
+    if (action.type === ELECTION_NAME_ACTION) {
+        console.log('ELECTION NAME ' , action.payload.electionName);
+        return action.payload.electionName;
+    }else if(action.type === NEW_QUESTION_ACTION){
+        return electionName;
+    }    
 
-    return action.payload.electionName;
+    return electionName;
 
 };
     export const newQuestionReducer = ( questions =[], action) =>{

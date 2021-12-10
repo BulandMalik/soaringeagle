@@ -13,7 +13,7 @@ export const createAddElectionAction                = election       => ({ type:
 export const createUpdateElectionAction             = election       => ({ type: UPDATE_ELECTION_ACTION             ,payload:{election}        });
 export const createErrorMessageAction               = errorMessage   => ({ type: ERROR_MESSAGE_ACTION               ,payload:{errorMessage}    });
 export const createNewQuestionAction                = question       => ({ type: NEW_QUESTION_ACTION                ,payload:{question}        });
-export const createNewElectionNameAction            = electionName   => ({ type: NEW_QUESTION_ACTION                ,payload:{electionName}    });
+export const createNewElectionNameAction            = electionName   => ({ type: ELECTION_NAME_ACTION                ,payload:{electionName}    });
 				
 // FUNCTION ACTION OBJECT ss
 export const refreshElections = () => {

@@ -13,7 +13,7 @@ export const ElectionTable = () => {
 
     const onQuestion = (questionForm) => {
         if(questionForm.text.trim()){
-            
+            onElectionName(questionForm.electionName);
             onNewQuestion(questionForm.text);
         }else{
             onErrorMessage('No Question was entered');
