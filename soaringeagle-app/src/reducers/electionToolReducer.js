@@ -1,7 +1,7 @@
 import {
     // ADD_ELECTION_ACTION,
 	ERROR_MESSAGE_ACTION,
-
+    ELECTION_NAME_ACTION,
 	NEW_QUESTION_ACTION,
 
     REFRESH_ELECTIONS_DONE_ACTION
@@ -26,6 +26,17 @@ export const errorMessageReducer = (errorMessage = '', action) => {
     }
 
     return action.payload.errorMessage;
+
+};
+
+export const electionNameReducer = (electionName = '', action) => {
+
+    
+    if (!(action.type === ELECTION_NAME_ACTION)) {
+        return '';
+    }
+
+    return action.payload.electionName;
 
 };
     export const newQuestionReducer = ( questions =[], action) =>{

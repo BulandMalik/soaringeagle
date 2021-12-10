@@ -6,12 +6,14 @@ export const EDIT_ELECTION_ACTION       = 'EDIT_ELECTION';
 export const ERROR_MESSAGE_ACTION       = 'ERROR_MESSAGE';
 export const NEW_QUESTION_ACTION        = 'NEW_QUESTION';
 export const UPDATE_ELECTION_ACTION     = 'UPDATE_ELECTION';
+export const ELECTION_NAME_ACTION       = 'ELECTION_NAME';
 export const createRefreshElectionsRequestAction    = ()             => ({ type: REFRESH_ELECTIONS_REQUEST_ACTION   });
 export const createRefreshElectionsDoneAction       = elections      => ({ type: REFRESH_ELECTIONS_DONE_ACTION      ,payload:{elections}       });
 export const createAddElectionAction                = election       => ({ type: ADD_ELECTION_ACTION                ,payload:{election}        });
-export const createUpdateElectionAction             = election       => ({ type: UPDATE_ELECTION_ACTION             ,payload:{election}         });
+export const createUpdateElectionAction             = election       => ({ type: UPDATE_ELECTION_ACTION             ,payload:{election}        });
 export const createErrorMessageAction               = errorMessage   => ({ type: ERROR_MESSAGE_ACTION               ,payload:{errorMessage}    });
 export const createNewQuestionAction                = question       => ({ type: NEW_QUESTION_ACTION                ,payload:{question}        });
+export const createNewElectionNameAction            = electionName   => ({ type: NEW_QUESTION_ACTION                ,payload:{electionName}    });
 				
 // FUNCTION ACTION OBJECT ss
 export const refreshElections = () => {

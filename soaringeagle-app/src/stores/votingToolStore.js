@@ -6,7 +6,7 @@ import {
 } from '../reducers/votingToolReducers';
 
 import { 
-    electionsReducer,errorMessageReducer,newQuestionReducer,
+    electionsReducer,errorMessageReducer,newQuestionReducer,electionNameReducer
 } from '../reducers/electionToolReducer';
 
 import thunk from 'redux-thunk';
@@ -20,6 +20,7 @@ export const votingToolStore = createStore(
         errorMessage: errorMessageReducer,
         questions: newQuestionReducer,
         errorMessage: errorMessageReducer,
+        electionName:electionNameReducer,
         showIDForm: showIDFormReducer,
         showElectionList: showElectionListReducer,
         showBallotForm: showBallotFormReducer,

@@ -7,13 +7,16 @@ import {
   addElection, 
   createErrorMessageAction,
   createNewQuestionAction, 
+  createNewElectionNameAction,
 } from "../actions/electionToolActions";
 
 export const useElectionToolReducerStore = () => {
 
   const elections = useSelector(sortedElectionSelectors);
-  const errorMessage = useSelector(state => state.errorMessage);
-  const questions = useSelector(state => state.questions);
+  const errorMessage  = useSelector(state => state.errorMessage);
+  const questions     = useSelector(state => state.questions);
+  const electionName  = useSelector(state => state.electionName);
+  
 
 
   const dispatch = useDispatch();
@@ -23,6 +26,7 @@ export const useElectionToolReducerStore = () => {
     onAddElection : addElection, 
     onErrorMessage : createErrorMessageAction, 
     onNewQuestion : createNewQuestionAction, 
+    onElectionName: createNewElectionNameAction
   }, dispatch), [dispatch]);   		// Create only-if "dispatch" CHANGED  else  MEMOIZATION
 
   useEffect(() => {
@@ -30,7 +34,7 @@ export const useElectionToolReducerStore = () => {
   }, [boundActions]);               // Create only-if "actions"  CHANGED  else  MEMOIZATION
 
 
-  return { elections, errorMessage , boundActions, questions };
+  return { elections, errorMessage , boundActions, questions, electionName };
 
 
 

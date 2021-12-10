@@ -5,6 +5,7 @@ export const ElectionViewRow = ( props ) => {
     let ballots = election.voterIds.length;
     return <tr> 
             <td>{election.id}</td>
+            <td>{election.electionName}</td>
             <td>{question.id}</td>
             <td>{question.text}</td>
             <td>{question.yesCount}</td>

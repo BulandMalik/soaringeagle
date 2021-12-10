@@ -4,15 +4,16 @@ import { ElectionAddRow } from "./ElectionAddRow";
 
 export const ElectionTable = () => {
     const {
-        elections, questions,errorMessage,
+        elections, questions,errorMessage,electionName,
         boundActions: {
-            onAddElection, onNewQuestion,onErrorMessage,
+            onAddElection, onNewQuestion,onErrorMessage,onElectionName
             
         },
     }   = useElectionToolReducerStore();
 
     const onQuestion = (questionForm) => {
         if(questionForm.text.trim()){
+            
             onNewQuestion(questionForm.text);
         }else{
             onErrorMessage('No Question was entered');
@@ -39,6 +40,7 @@ export const ElectionTable = () => {
                 questionArray.shift();
                 onAddElection( { 
                     id: Math.max(...elections.map(c => c.id), 0 ) + 1 ,
+                    electionName:questionForm.electionName,
                     questions: questionArray,
                     voterIds:[]
                 } );
@@ -55,6 +57,7 @@ export const ElectionTable = () => {
                 <thead>
                 <tr>
                     <th>Election #</th>
+                    <th>Election </th>
                     <th>Question #</th>
                     <th>Question</th>
                     <th>Yays</th>
@@ -72,7 +75,7 @@ export const ElectionTable = () => {
                     
                 }  
                 { questions.length>0
-                    ?<ElectionAddRow key={-1.*(questions.length+1)} questionID={-1} questionText={''} onQuestion={onQuestion} saveElection={saveElection}  />
+                    ?<ElectionAddRow key={-1.*(questions.length+1)} questionID={-1} questionText={''} electionName={electionName} onQuestion={onQuestion} saveElection={saveElection}  />
                     :<></>               
                 }  
    
