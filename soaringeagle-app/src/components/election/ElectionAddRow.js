@@ -14,10 +14,10 @@ export const ElectionAddRow = ( props ) => {
 
     return <tr>
             <td>
-                <button type="button" onClick={()=>props.onQuestion(addQuestionForm)}>+</button> 
+                
                 
             </td>
-            <td>{addQuestionForm.id < 0?'':''+addQuestionForm.id}</td>
+            <td>{ addQuestionForm.id < 0?<button type="button" onClick={()=>props.onQuestion(addQuestionForm)}>+</button>:''+addQuestionForm.id}</td>
             <td>
                 {
                 addQuestionForm.id < 0

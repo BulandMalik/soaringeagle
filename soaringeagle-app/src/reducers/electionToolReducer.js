@@ -33,7 +33,7 @@ export const errorMessageReducer = (errorMessage = '', action) => {
             return [];
         }
         if (action.type === NEW_QUESTION_ACTION ) {
-            console.log(" NEW ELECTION =  " ,action.type, action.payload) ;
+            // console.log(" NEW ELECTION =  " ,action.type, action.payload) ;
             if(action.payload.question)
                 return [...questions,action.payload.question];
             else

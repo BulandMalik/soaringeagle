@@ -1,5 +1,4 @@
 import { useElectionToolReducerStore } from "../../hooks/useElectionToolReducerStore";
-import { SORT_ASC } from '../../selectors/itemToolSelectors';
 import { ElectionViewRow } from "./ElectionViewRow";
 import { ElectionAddRow } from "./ElectionAddRow";
 
@@ -41,7 +40,7 @@ export const ElectionTable = () => {
             } );
         }
     }
-    console.log("QUESTIONs " , questions);
+    //console.log("QUESTIONs " , questions);
 
     return (  
         <>    
@@ -49,8 +48,8 @@ export const ElectionTable = () => {
             <table id="tbl">
                 <thead>
                 <tr>
-                    <th>Election</th>
-                    <th>#</th>
+                    <th>Election #</th>
+                    <th>Question #</th>
                     <th>Question</th>
                     <th>Yays</th>
                     <th>Ballots</th>
@@ -63,11 +62,11 @@ export const ElectionTable = () => {
                 }
                 
                 {   questions.map((question,index) =>
-                           index==0?<></>:<ElectionAddRow key={index} questionID={index} questionText={question} onQuestion={onQuestion}   />)
+                           index===0?<></>:<ElectionAddRow key={index} questionID={index} questionText={question} onQuestion={onQuestion}   />)
                     
                 }  
                 { questions.length>0
-                    ?<ElectionAddRow key={questions.length} questionID={-1} questionText={''} onQuestion={onQuestion}   />
+                    ?<ElectionAddRow key={-1*questions.length} questionID={-1} questionText={''} onQuestion={onQuestion}   />
                     :<></>               
                 }  
    
