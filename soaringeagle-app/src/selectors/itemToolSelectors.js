@@ -1,3 +1,5 @@
+export const SORT_ASC = 'asc';
+export const SORT_DESC = 'desc';
 const defaultSortItems = (unsortedItems, sortCol, sortDir) => {
     console.log("unsortedItems:",unsortedItems, " ...sortCol:",sortCol, " ...sortDir:",sortDir);
     const items = [ ...unsortedItems ];
@@ -16,3 +18,10 @@ const defaultSortItems = (unsortedItems, sortCol, sortDir) => {
     return defaultSortItems(
       state.registeredVoters, state.itemsSort.sortCol, state.itemsSort.sortDir);
   };
+
+  export const sortedElectionSelectors = state => {
+    return state.elections
+    //return defaultSortItems(state.elections, state.electionsSort.sortCol, state.electionsSort.sortDir );
+  }
+
+

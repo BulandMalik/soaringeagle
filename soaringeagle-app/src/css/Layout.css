@@ -8,6 +8,77 @@ body {
 label {
     display: block;
     padding: 2px;
+    /*float: left;*/
+    /*width: 10em;*/
+    /*margin-right: 1em;*/
+}
+
+.voterreg {
+    list-style-type: none;
+
+
+    padding: 0;
+    margin: 0;
+}
+
+.voterreg > label {
+    display: grid;
+    /*grid-template-columns: 5fr 10fr;*/
+    grid-template-columns: 10% 30%;
+
+    /*display: grid;*/
+    /*text-align: center;*/
+    padding: 10px;
+    /*float: left;*/
+    width: 100%
+
+    /*width: 10em;*/
+    /*margin-right: 1em;*/
+}
+
+.voterreg > button {
+    /*grid-template-columns: 5fr 10fr;*/
+
+    /*display: grid;*/
+    /*text-align: center;*/
+    padding: 10px;
+    justifyContent: center;
+    alignItems: center;
+    verticalAlign: right;
+    width: 10%
+
+    /*width: 10em;*/
+    /*margin-right: 1em;*/
+}
+
+
+.voterreg > text {
+    display: grid;
+
+    /*display: block;*/
+    /*width: 10%;*/
+    /*padding: 2px;*/
+    /*float: right;*/
+    /*width: 10em;*/
+    /*margin-right: 1em;*/
+
+    width: 100%;
+    padding: 1px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    box-sizing: border-box;
+}
+
+.voterreg > box {
+    width: 10px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px solid blue;
+    textAlign: center;
+    verticalAlign: right;
+    lineHeight: 90px;
+    backgroundColor: red;
 }
 
 .container {
@@ -138,4 +209,172 @@ label {
     
     color: white;
     font-size: 0.9rem;
+}
+
+
+
+/* GURINDER GILLs STYLEs*/
+
+#tbl input.inlineEdit  { border-color: red ; padding: 3px ;}
+#tbl button  { padding: 5px ; margin: 5px ;}
+table#tbl  { border : 1px solid black; }
+#tbl * { border : 1px solid black; padding: 5px 10px 5px 10px ;}
+#formTbl { border : 1px solid black; padding: 10px ; margin : 20px 1px 20px 2px }
+#formTbl button  { padding: 5px ; margin: 5px ; float: right;}
+
+.homePageContents h1 {
+    display: block;
+    padding: 5px 5px 15px .5em;
+    color: #fff;
+    font-size: large;
+    width: 100%;
+    margin: 10px;
+}
+
+.homePageContents li {
+        display: block;
+        padding: 5px 5px 15px .5em;
+        border-left: 5px solid #eb9008;
+        border-right: 5px solid #e7ebee;
+        color: #fff;
+        text-decoration: none;
+        font-size: large;
+        width: 100%;
+        margin: 10px;
+}
+
+table.blueTable {
+    border: 0px solid #472b01;
+    background-color: #83530b36;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+table.blueTable td, table.blueTable th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+}
+
+table.blueTable tbody td {
+    font-size: 14px;
+}
+
+table.blueTable tr:nth-child(even) {
+    background: #D0E4F5;
+}
+
+table.blueTable thead {
+    background: #b1660542;
+    background: -moz-linear-gradient(top, #94700dd7 0%, #e7be07cc 66%, #c57702 100%);
+    background: -webkit-linear-gradient(top, #94700dd7 0%, #e7be07cc 66%, #c57702 100%);
+    background: linear-gradient(top, #94700dd7 0%, #e7be07cc 66%, #c57702 100%);
+    border-bottom: 2px solid #444444;
+}
+
+table.blueTable thead tr th > button{
+    font-size: 16px;
+    font-weight: bold;
+    color: #e99a06af; 
+    border-left: 2px solid #D0E4F5;
+}
+
+table.blueTable thead th:first-child {
+    border-left: none;
+}
+
+
+table.blueTable tfoot {
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #D0E4F5;
+    background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    border-top: 2px solid #444444;
+}
+
+table.blueTable tfoot td {
+    font-size: 14px;
+}
+
+table.blueTable tfoot .links {
+    text-align: right;
+}
+
+table.blueTable tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+p.text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    letter-spacing: -0.4px;
+    word-spacing: 1.2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+ul {
+    list-style-type: square;
+}
+
+/*select header child of container div*/
+.container > header {
+    grid-area: header;
+    background-color: rgba(185, 138, 8, 0.76);
+
+    padding-left: 10px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+
+    /*position in axis, major/minor*/
+    display: flex;
+
+    /* change major/minor axis*/
+    flex-direction: row;
+
+    /* major axis alignment*/
+    justify-content:flex-start;
+
+    /* minor axis alignment*/
+    align-items: center;
+}
+
+.wrapper {
+    width: 50%;
+	/*margin: 0 auto;*/
+}
+
+header .logo {
+	display: inline;
+	/*border-left: 1px dashed #333333;*/
+	padding: 0 0 20px 10px;
+	text-decoration: none;
+	float: left;
+	font-size: 30px;
+	color: #cc3333;
+	margin: 20px 0px;
+}
+header .logo {
+  position:relative;
+}
+header .logo span {
+  color:rgba(0, 0, 0, 0.534);
+  white-space:nowrap;
+  font-size:12px;
+  font-weight: bold;
+  position:absolute;
+  bottom:0;
+  left:10px;
 }

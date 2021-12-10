@@ -49,8 +49,6 @@ export const useVotingToolStore = () => {
     }
     const ballot = getBallot();
 
-    // console.log("ballottttt",ballot);
-
     const dispatch = useDispatch();
 
     const actions = useMemo( () => bindActionCreators({

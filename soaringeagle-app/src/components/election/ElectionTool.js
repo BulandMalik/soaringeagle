@@ -1,10 +1,17 @@
+import { ToolHeader } from "../ToolHeader";
+import { ToolFooter } from "../ToolFooter";
+import { ElectionTable } from "./ElectionTable";
+import { ElectionForm } from "./ElectionForm";
 
-export const ElectionTool = () => {
+export const ElectionTool = () => {                             
 
-  return (
-    <>
-      <h1>Elections</h1>
+    return (  
+    <>    
+        {/* <ToolHeader headerText="Election Tools" /> */}
+        <ElectionTable />
+        {/* <ElectionForm /> */}
+        {/* <ToolFooter footerText="Copyright 2021. A Cool Company, Inc."/> */}
     </>
-  );
 
-};
+    ); 
+  }

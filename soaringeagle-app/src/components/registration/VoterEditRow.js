@@ -5,7 +5,7 @@ import cancelLogo from '../../images/cancel-16.ico';
 
 export const VoterEditRow = props => {
 
-  console.log("VoterEditRow props:",props);
+  //console.log("VoterEditRow props:",props);
 
   const [ voterForm, change ] = useForm({
     firstName: props.voter.firstName,
