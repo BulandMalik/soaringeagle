@@ -5,17 +5,14 @@ import { useEffect, useMemo } from "react";
 import {
   refreshElections, 
   addElection, 
-  updateElection, 
-  removeElection, 
-  createEditElectionAction, 
-  createCancelElectionAction, 
+  createErrorMessageAction,
   createNewQuestionAction, 
 } from "../actions/electionToolActions";
 
 export const useElectionToolReducerStore = () => {
 
   const elections = useSelector(sortedElectionSelectors);
-  const editElectionId = useSelector(state => state.editElectionId);
+  const errorMessage = useSelector(state => state.errorMessage);
   const questions = useSelector(state => state.questions);
 
 
@@ -24,10 +21,7 @@ export const useElectionToolReducerStore = () => {
   const boundActions = useMemo(() => bindActionCreators({
     refreshElections, 
     onAddElection : addElection, 
-    onUpdateElection : updateElection, 
-    onRemoveElection : removeElection, 
-    onEditElection : createEditElectionAction, 
-    onCancelElection : createCancelElectionAction, 
+    onErrorMessage : createErrorMessageAction, 
     onNewQuestion : createNewQuestionAction, 
   }, dispatch), [dispatch]);   		// Create only-if "dispatch" CHANGED  else  MEMOIZATION
 
@@ -36,7 +30,7 @@ export const useElectionToolReducerStore = () => {
   }, [boundActions]);               // Create only-if "actions"  CHANGED  else  MEMOIZATION
 
 
-  return { elections, editElectionId, boundActions, questions };
+  return { elections, errorMessage , boundActions, questions };
 
 
 
