@@ -49,7 +49,7 @@ export const ElectionTable = () => {
         }
     }
     //console.log("QUESTIONs " , questions);
-
+    
     return (  
         <>    
             {errorMessage===''?<></>:<h1 style={{color:'red'}} >{errorMessage}</h1>}
@@ -64,25 +64,19 @@ export const ElectionTable = () => {
                     <th>Ballots</th>
                 </tr>
                 </thead>
-                <tbody>
-                {   elections.map(election =>
+                <tbody>{elections.map(election =>
                         election.questions.map(question =>
                              <ElectionViewRow key={''+election.id+':'+question.id} election={election} question={question}    />))
-                }
-                
-                {   questions.map((question,index) =>
-                           index===0?<></>:<ElectionAddRow key={index} questionID={index} questionText={question} onQuestion={onQuestion}   />)
+                }{questions.map((question,index) =>
+                           index===0?'':<ElectionAddRow key={'newQuestion'+index} rowID={index} questionID={index} questionText={question}   />)
                     
-                }  
-                { questions.length>0
-                    ?<ElectionAddRow key={-1.*(questions.length+1)} questionID={-1} questionText={''} electionName={electionName} onQuestion={onQuestion} saveElection={saveElection}  />
-                    :<></>               
-                }  
-   
-                </tbody>
+                }{questions.length>0
+                    ?<ElectionAddRow key={'addRow'+questions.length} rowID={questions.length} questionID={-1} questionText={''} electionName={electionName} onQuestion={onQuestion} saveElection={saveElection}  />
+                    :''             
+                }</tbody>
             </table>
             <br />
-            {questions.length<=0?<button type="button" onClick={()=>saveElection()}  >Create Election</button>:<></>}
+            {questions.length<=0?<button key={'createElection'+questions.length} type="button" onClick={()=>saveElection()}  >Create Election</button>:<></>}
         </>
         ); 
  };

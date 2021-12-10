@@ -17,27 +17,25 @@ export const ElectionAddRow = ( props ) => {
         props.onQuestion({...addQuestionForm,electionName:props.electionName});
     }*/
 
+    console.log('ROW ID ', props.rowID);
     return <tr>
             <td></td>
             <td>{
                 addQuestionForm.id < 0
-                ? <input  type="text" name="electionName" value={addQuestionForm.electionName}     onChange={change}  size="20" className="inlineEdit"></input>
-                : <>{}</>
-               }
-            </td>
+                ? <input key={'button1'+props.rowID} type="text" name="electionName" value={addQuestionForm.electionName}     onChange={change}  size="20" className="inlineEdit"></input>
+                : ''
+            }</td>
             <td>{ addQuestionForm.id < 0?<button type="button" onClick={()=>props.onQuestion(addQuestionForm)}>+</button>:''+addQuestionForm.id}</td>
-            <td>
-                {
+            <td>{
                 addQuestionForm.id < 0
-                ? <input key="text"  type="text" name="text" value={addQuestionForm.text}     onChange={change}  size="60" className="inlineEdit"></input>
+                ? <input key={'input'+props.rowID}  type="text" name="text" value={addQuestionForm.text}     onChange={change}  size="60" className="inlineEdit"></input>
                 : <>{addQuestionForm.text}</>
-                }
-            </td>
-            {
+            }</td>
+            <td colSpan={2}>{
                 addQuestionForm.id < 0
-                ?<td colSpan={2}  ><button type="button" onClick={()=>props.saveElection(addQuestionForm)} >Save</button></td>
-                :<></>
-            }
+                ?<button key={'button2'+props.rowID} type="button" onClick={()=>props.saveElection(addQuestionForm)} >Save</button>
+                :''
+            }</td>
         </tr>
  };
 
