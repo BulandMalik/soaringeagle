@@ -30,8 +30,7 @@ export const update = async (election) => {
 }
 
 export const remove = async (electionId) => {
-  const res = await fetch(baseURL+`/${encodeURIComponent(electionId)}`, {
+  return await fetch(baseURL+`/${encodeURIComponent(electionId)}`, {
     method: 'DELETE'
   });
-  return;
 }

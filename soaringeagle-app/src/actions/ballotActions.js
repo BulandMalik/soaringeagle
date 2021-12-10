@@ -18,7 +18,7 @@ export const SET_DUPLICATE_ELECTION_ACTION = 'SET_DUPLACATE_ELECTION'
 // });
 
 export const createVerifyAction = (result) => (
-  console.log("createVerifyAction,",result),
+  //console.log("createVerifyAction,",result),
   {type: VERIFY_ACTION, payload: { result }}
 );
 

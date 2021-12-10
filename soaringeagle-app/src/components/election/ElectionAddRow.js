@@ -1,10 +1,10 @@
 import { useForm } from '../../hooks/useForm';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 export const ElectionAddRow = ( props ) => {
 
 
-    const [] = useState();
+    //const [] = useState();
 
     const [ addQuestionForm, change ] = useForm ({
         id     : props.questionID,
@@ -13,9 +13,9 @@ export const ElectionAddRow = ( props ) => {
     });
 
     
-    const onAddQuestion = (questionForm) => {
+    /*const onAddQuestion = (questionForm) => {
         props.onQuestion({...addQuestionForm,electionName:props.electionName});
-    }
+    }*/
 
     return <tr>
             <td></td>
@@ -35,7 +35,7 @@ export const ElectionAddRow = ( props ) => {
             </td>
             {
                 addQuestionForm.id < 0
-                ?<td colspan={2}  ><button type="button" type="button" onClick={()=>props.saveElection(addQuestionForm)} >Create</button></td>
+                ?<td colSpan={2}  ><button type="button" onClick={()=>props.saveElection(addQuestionForm)} >Create</button></td>
                 :<></>
             }
         </tr>

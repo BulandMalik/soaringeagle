@@ -3,7 +3,7 @@ export const ElectionViewRow = ( props ) => {
     const question = props.question;
 
     let ballots = election.voterIds.length;
-    return <tr> 
+    return <tr key='{election.id}-{question.id}'> 
             <td>{election.id}</td>
             <td>{election.electionName}</td>
             <td>{question.id}</td>

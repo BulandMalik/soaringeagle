@@ -28,15 +28,17 @@ export const VoterTable = props => {
   console.log("checkedState::::::::",checkedState);
 
   const handleOnChange = (event) => {
-    console.log("checkedState:",checkedState, " .... event Id:",event.target.id, ", event checked",event.target.checked);
+    const id = parseInt(event.target.id,10);
+
+    console.log("checkedState:",checkedState, " .... event Id:",id, ", event checked",event.target.checked);
 
     let updatedCheckedState = [...checkedState];
-    if ( updatedCheckedState.includes(event.target.id) ) {
+    if ( updatedCheckedState.includes(id) ) {
         if ( !event.target.checked ) {
-          updatedCheckedState = updatedCheckedState.filter( checkedStateId => checkedStateId !== event.target.id);
+          updatedCheckedState = updatedCheckedState.filter( checkedStateId => checkedStateId !== id);
         }
     }
-    else updatedCheckedState.push(event.target.id);
+    else updatedCheckedState.push(id);
 
     console.log("updatedCheckedState:",updatedCheckedState);
     setCheckedState(updatedCheckedState);

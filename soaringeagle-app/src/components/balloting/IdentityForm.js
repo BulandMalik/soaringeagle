@@ -11,12 +11,16 @@ export const IdentityForm = (props) => {
 
   return (
     <form>
-      { props.errorMessage && <div style={{ color: 'red', fontWeight: 'bold' }}>{props.errorMessage}</div>}
-      <label>
-        Enter you ID here:
-        <input type="text" name="id" value={idForm.id} onChange={change} />
-      </label>
-      <button type="button" onClick={verify}>Verify</button>
+      { props.errorMessage && <div className="" style={{ color: 'red', fontWeight: 'bold' }}>{props.errorMessage}</div>}
+      <ul class="flex-outer">
+          <li>
+            <label> Enter you ID here: </label>
+            <input type="text" name="id" value={idForm.id} onChange={change} />
+          </li>
+          <li>
+            <button type="button" onClick={verify}>Verify</button>
+          </li>
+      </ul>
     </form>
   );
 }

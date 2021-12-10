@@ -33,7 +33,7 @@ export const electionNameReducer = (electionName = '', action) => {
 
     
     if (action.type === ELECTION_NAME_ACTION) {
-        console.log('ELECTION NAME ' , action.payload.electionName);
+        //console.log('ELECTION NAME ' , action.payload.electionName);
         return action.payload.electionName;
     }else if(action.type === NEW_QUESTION_ACTION){
         return electionName;

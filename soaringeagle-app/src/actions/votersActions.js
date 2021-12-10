@@ -22,7 +22,7 @@ export const createRerfreshVoterDoneAction = (registeredVoters) => ({
 });
 export const refreshVoters = () => {
 
-    console.log("refreshing.......");
+    //console.log("refreshing.......");
     //it is the function action object that intercepted by middleware
     //when the middleware invokes this function is passes in the store's dispatch method
     return dispatch => {

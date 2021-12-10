@@ -1,4 +1,4 @@
-import { all , add, update, remove  } from '../apis/elections';
+import { all , add, update, /*remove*/  } from '../apis/elections';
 export const REFRESH_ELECTIONS_REQUEST_ACTION  = 'REFRESH_ELECTIONS_REQUEST';
 export const REFRESH_ELECTIONS_DONE_ACTION     = 'REFRESH_ELECTIONS_DONE';
 export const ADD_ELECTION_ACTION        = 'ADD_ELECTION';

@@ -5,7 +5,7 @@ import cancelLogo from '../../images/cancel-16.ico';
 
 export const VoterEditRow = props => {
 
-  //console.log("VoterEditRow props:",props);
+  console.log("VoterEditRow props:",props);
 
   const [ voterForm, change ] = useForm({
     firstName: props.voter.firstName,
@@ -43,7 +43,7 @@ export const VoterEditRow = props => {
       <td><input type="text" name="city" value={voterForm.city} onChange={change} /></td>
       <td><input type="text" name="birthdate" value={voterForm.birthdate} onChange={change} /></td>
       <td><input type="text" name="email" value={voterForm.email} onChange={change} /></td>
-      <td><input type="number" name="phone" value={voterForm.phone} onChange={change} /></td>
+      <td><input type="text" name="phone" value={voterForm.phone} onChange={change} /></td>
       <td>
         <button type="button"
           onClick={saveVoter}><img src={saveLogo} alt="Save" /></button>
@@ -55,8 +55,10 @@ export const VoterEditRow = props => {
                 id={props.voter.id}
                 name={props.voter.id}
                 value={props.voter.id}
+                //checked={props.checkedState[props.voter.id] ? true: false}
+                //onChange={handleOnClick}
+                //defaultChecked={props.checkedState[props.voter.id] ? true: false}
                 checked={props.checkedState[props.voter.id]}
-                //onChange={() => handleOnChange()}
                 onClick={handleOnClick}
         />
       </td>      

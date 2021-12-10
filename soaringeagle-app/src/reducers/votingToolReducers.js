@@ -59,14 +59,14 @@ export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, 
 }  
 
 export const ballotErrorMessageReducer = (errorMessage = '', action) => {
-    console.log("ballotErrorMessageReducer", action);
+    //console.log("ballotErrorMessageReducer", action);
    
     if(action.type === VERIFY_ACTION && !action.payload.result) {
         return "Voter ID is NOT Registered !";
     }
 
     if(action.type === CHOOSE_ELECTION_ACTION && action.payload.electionId === -2){
-        console.log("action.payload.electionId === -2", (action.payload.electionId === -2));
+        //console.log("action.payload.electionId === -2", (action.payload.electionId === -2));
         return "You already voted this election !"
     }
     
@@ -74,7 +74,7 @@ export const ballotErrorMessageReducer = (errorMessage = '', action) => {
 }
 
 export const showIDFormReducer = (showIDForm = false, action) => {
-    console.log("!!showIDFormReducer", action)
+    //console.log("!!showIDFormReducer", action)
     if(action.type === START_VOTING_ACTION && action.payload.showIDForm){
         return true;
     } else if(action.type === START_VOTING_ACTION){
@@ -84,7 +84,7 @@ export const showIDFormReducer = (showIDForm = false, action) => {
 }
 
 export const showBallotFormReducer = (showBallotForm = false, action) => {
-    console.log("!showBallotFormReducer", action);
+    //console.log("!showBallotFormReducer", action);
     if(action.type === START_BALLOTING_ACTION && action.payload.showBallotForm){
         return true;
     } else if(action.type === START_BALLOTING_ACTION){
@@ -94,7 +94,7 @@ export const showBallotFormReducer = (showBallotForm = false, action) => {
 }
 
 export const showElectionListReducer = (showElectionList = false, action) => {
-    console.log("!!showElectionListReducer", action);
+    //console.log("!!showElectionListReducer", action);
     if(action.type === START_CHOOSE_ELECTION_ACTION && action.payload.showElectionList){
         return true;
     } else if(action.type === START_CHOOSE_ELECTION_ACTION){
@@ -105,7 +105,7 @@ export const showElectionListReducer = (showElectionList = false, action) => {
 
 // ## need to update with election part
 export const electionsReducer = (elections = [], action) => {
-    console.log("!!electionsReducer", action)
+    //console.log("!!electionsReducer", action)
     if(action.type === REFRESH_ELECTIONS_DONE_ACTION){
         return action.payload.elections;
     }
@@ -113,7 +113,7 @@ export const electionsReducer = (elections = [], action) => {
 }
 
 export const chooseElectionIdReducer = (electionId = -1, action) => {
-    console.log("!!chooseElectionIdReducer", electionId);
+    //console.log("!!chooseElectionIdReducer", electionId);
     if(action.type === CHOOSE_ELECTION_ACTION){
         return action.payload.electionId;
     }
@@ -121,7 +121,7 @@ export const chooseElectionIdReducer = (electionId = -1, action) => {
 }
 
 export const voterIdReducer = (voterId = -1, action) => {
-    console.log("!! voterIdReducer", voterId);
+    //console.log("!! voterIdReducer", voterId);
     if(action.type === SET_CURRENT_VOTER_ACTION){
         return action.payload.voterId;
     }
