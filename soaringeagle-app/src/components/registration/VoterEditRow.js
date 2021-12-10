@@ -28,6 +28,11 @@ export const VoterEditRow = props => {
     props.onCancel(props.voter.id);
   };  
 
+  const handleOnClick = (event) => {
+    //console.log("updatedCheckedState:",updatedCheckedState, " .... position:",position);
+    props.onChange(event);
+  };
+
 
   return (
     <tr>
@@ -45,6 +50,16 @@ export const VoterEditRow = props => {
         <button type="button"
           onClick={cancelVoter}><img src={cancelLogo} alt="Cancel" /></button>
       </td>
+      <td>
+        <input type="checkbox"
+                id={props.voter.id}
+                name={props.voter.id}
+                value={props.voter.id}
+                checked={props.checkedState[props.voter.id]}
+                //onChange={() => handleOnChange()}
+                onClick={handleOnClick}
+        />
+      </td>      
     </tr>    
   );
 

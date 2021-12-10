@@ -19,6 +19,7 @@ export const BallotingTool = () => {
   } = useVotingToolStore();
 
   const Vote = () => {
+    console.log("vote");
     startVoting(true);
   }
 

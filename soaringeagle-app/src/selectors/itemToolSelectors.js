@@ -1,7 +1,7 @@
 export const SORT_ASC = 'asc';
 export const SORT_DESC = 'desc';
 const defaultSortItems = (unsortedItems, sortCol, sortDir) => {
-    console.log("unsortedItems:",unsortedItems, " ...sortCol:",sortCol, " ...sortDir:",sortDir);
+    //console.log("unsortedItems:",unsortedItems, " ...sortCol:",sortCol, " ...sortDir:",sortDir);
     const items = [ ...unsortedItems ];
     return items.sort((a, b) => {
       if (a[sortCol] < b[sortCol]) {

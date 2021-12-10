@@ -15,11 +15,7 @@ const tableHeaders=[
   ['Phone Number','phone'],
 ]
 export const VoterTable = props => {
-/*
-  const sortByMake = (text) => {
-    props.onSort(text);
-  };
-*/
+  
   const sortDirectionIndicator = (sortCol) => {
     if (sortCol === props.sortCol) {
       return props.sortDir === 'asc' ? ' v' : ' ^';
@@ -28,9 +24,11 @@ export const VoterTable = props => {
   };  
 
   const [checkedState, setCheckedState] = useState([]); //new Array(props.voters.length).fill(0)
+  
+  console.log("checkedState::::::::",checkedState);
 
   const handleOnChange = (event) => {
-    //console.log("checkedState:",checkedState, " .... event Id:",event.target.id, ", event checked",event.target.checked);
+    console.log("checkedState:",checkedState, " .... event Id:",event.target.id, ", event checked",event.target.checked);
 
     let updatedCheckedState = [...checkedState];
     if ( updatedCheckedState.includes(event.target.id) ) {
@@ -40,7 +38,7 @@ export const VoterTable = props => {
     }
     else updatedCheckedState.push(event.target.id);
 
-    //console.log("updatedCheckedState:",updatedCheckedState);
+    console.log("updatedCheckedState:",updatedCheckedState);
     setCheckedState(updatedCheckedState);
   };
 
@@ -69,7 +67,7 @@ export const VoterTable = props => {
         {props.voters.map(voter =>
           props.editId === voter.id
             ? <VoterEditRow key={voter.id} voter={voter}
-                onSave={props.onSave} onCancel={props.onCancel} />
+                onSave={props.onSave} onCancel={props.onCancel} checkedState={checkedState} onChange={handleOnChange} />
             : <VoterViewRow key={voter.id} voter={voter}
                 onEdit={props.onEdit} onDelete={props.onDelete} checkedState={checkedState} onChange={handleOnChange}/>)}
       </tbody>

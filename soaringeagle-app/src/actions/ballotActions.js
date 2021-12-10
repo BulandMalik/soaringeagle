@@ -21,7 +21,9 @@ export const createVerifyAction = (result) => ({
   type: VERIFY_ACTION, payload: { result }
 });
 
-export const createStartVotingAction = (showIDForm) => ({
+export const createStartVotingAction = (showIDForm) => (
+  // console.log("createStartVotingAction",showIDForm), 
+  {
   type: START_VOTING_ACTION, payload: { showIDForm }
 });
 

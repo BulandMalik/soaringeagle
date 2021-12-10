@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { combineReducers } from 'redux';
 import { 
     registeredVotersReducer,itemEditReducer,itemsSortReducer,
+    showIDFormReducer, showElectionListReducer, showBallotFormReducer, chooseElectionIdReducer, voterIdReducer
 } from '../reducers/votingToolReducers';
 
 import { 
@@ -17,7 +18,14 @@ export const votingToolStore = createStore(
         itemsSort: itemsSortReducer,
         elections: electionsReducer,
         errorMessage: errorMessageReducer,
-        questions: newQuestionReducer
+        questions: newQuestionReducer,
+        errorMessage: errorMessageReducer,
+        showIDForm: showIDFormReducer,
+        showElectionList: showElectionListReducer,
+        showBallotForm: showBallotFormReducer,
+        elections: electionsReducer,
+        chooseElectionId: chooseElectionIdReducer,
+        voterId: voterIdReducer,
     }),
     applyMiddleware(thunk),
 );

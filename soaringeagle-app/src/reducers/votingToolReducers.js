@@ -47,8 +47,6 @@ export const itemEditReducer = ( itemId = -1, action) => {
 
 export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, action) => {
 
-    //console.log("itemsSortReducer::",action);
-    //console.log("itemsSort B::",itemsSort);
     if (action.type === SORT_ITEMS_ACTION) {
 
         if (itemsSort.sortDir === 'asc') {
@@ -57,7 +55,6 @@ export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, 
                 return { ...itemsSort, sortCol: action.payload.sortCol, sortDir: 'asc'};
         }
     }
-    //console.log("itemsSort A::",itemsSort);
     return itemsSort;
 }  
 
