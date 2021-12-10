@@ -5,7 +5,7 @@ import {
 } from '../reducers/votingToolReducers';
 
 import { 
-    electionsReducer,editElectionIdReducer,newQuestionReducer,
+    electionsReducer,errorMessageReducer,newQuestionReducer,
 } from '../reducers/electionToolReducer';
 
 import thunk from 'redux-thunk';
@@ -16,7 +16,7 @@ export const votingToolStore = createStore(
         itemEditId: itemEditReducer,
         itemsSort: itemsSortReducer,
         elections: electionsReducer,
-        editElectionId: editElectionIdReducer,
+        errorMessage: errorMessageReducer,
         questions: newQuestionReducer
     }),
     applyMiddleware(thunk),

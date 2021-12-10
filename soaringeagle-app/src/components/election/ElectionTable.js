@@ -5,17 +5,19 @@ import { ElectionAddRow } from "./ElectionAddRow";
 
 export const ElectionTable = () => {
     const {
-        elections, questions,
+        elections, questions,errorMessage,
         boundActions: {
-            onEditElection, onCancelElection,
-            onAddElection, onNewQuestion,
+            onAddElection, onNewQuestion,onErrorMessage,
             
         },
     }   = useElectionToolReducerStore();
 
-
     const onQuestion = (questionForm) => {
-        onNewQuestion(questionForm.text);
+        if(questionForm.text.trim()){
+            onNewQuestion(questionForm.text);
+        }else{
+            onErrorMessage('No Question was entered');
+        }
     }
     
     const saveElection = () =>{
@@ -43,6 +45,7 @@ export const ElectionTable = () => {
 
     return (  
         <>    
+            {errorMessage===''?<></>:<h1 style={{color:'red'}} >{errorMessage}</h1>}
             <table id="tbl">
                 <thead>
                 <tr>
