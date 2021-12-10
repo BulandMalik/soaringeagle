@@ -35,7 +35,7 @@ export const ElectionAddRow = ( props ) => {
             </td>
             {
                 addQuestionForm.id < 0
-                ?<td colSpan={2}  ><button type="button" onClick={()=>props.saveElection(addQuestionForm)} >Create</button></td>
+                ?<td colSpan={2}  ><button type="button" onClick={()=>props.saveElection(addQuestionForm)} >Save</button></td>
                 :<></>
             }
         </tr>

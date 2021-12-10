@@ -53,7 +53,7 @@ export const ElectionTable = () => {
     return (  
         <>    
             {errorMessage===''?<></>:<h1 style={{color:'red'}} >{errorMessage}</h1>}
-            <table id="tbl">
+            <table className="blueTable">
                 <thead>
                 <tr>
                     <th>Election #</th>
