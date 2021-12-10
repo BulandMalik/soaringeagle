@@ -43,7 +43,7 @@ export const App = (props) => {
                         <BallotingTool />
                     </Route>                     
                 </main>    
-                <aside>Sidebar</aside>
+                {/*<aside>Sidebar</aside>*/}
                 <ToolFooter companyName="A Cool Company, Inc."/>
             </Layout>
     </Router>

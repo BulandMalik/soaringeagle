@@ -108,12 +108,12 @@ label {
     1fr - sidebar - 20%
     -----2 cols
     */
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 7fr .2fr;
 
     grid-template-areas: 
         'header header'
         'menu menu'
-        'content sidebar'
+        'content content'
         'footer footer';
 }
 
@@ -160,6 +160,7 @@ label {
 .menu-item {
     padding: 2px 6px;
     margin: 0;
+    overflow: hidden;
 }
 
 .menu-item > a,
@@ -177,6 +178,7 @@ label {
 
 .menu-item > a:hover {
     text-decoration: underline;
+    background-color: rgba(244, 245, 175, 0.815);
 }
 
 .menu-item > a:active {
@@ -275,7 +277,7 @@ table.blueTable thead {
 table.blueTable thead tr th > button{
     font-size: 16px;
     font-weight: bold;
-    color: #e99a06af; 
+    color: black; /* #e99a06af; */
     border-left: 2px solid #D0E4F5;
 }
 
@@ -378,3 +380,31 @@ header .logo span {
   bottom:0;
   left:10px;
 }
+
+button {
+   display: inline-block;
+   width: 100%;       /* set to 100% */
+   /*height: 100%;*/      /* set to 100% */
+   margin-bottom: 0.5em;
+   padding-top: .3em;
+   padding-bottom: .6em;
+   color: black;
+   background-color: #ffffff;
+   border-radius: 3px;
+   border: solid #cccccc 1px;
+   box-shadow: 2px 2px 1px #888888;
+   clear:right;
+   white-space: nowrap;
+}
+
+button a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: none;
+    /*background-color: #ffffff;*/
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
