@@ -210,3 +210,14 @@ label {
     color: white;
     font-size: 0.9rem;
 }
+
+
+
+/* GURINDER GILLs STYLEs*/
+
+#tbl input.inlineEdit  { border-color: red ; padding: 3px ;}
+#tbl button  { padding: 5px ; margin: 5px ;}
+table#tbl  { border : 1px solid black; }
+#tbl * { border : 1px solid black; padding: 5px 10px 5px 10px ;}
+#formTbl { border : 1px solid black; padding: 10px ; margin : 20px 1px 20px 2px }
+#formTbl button  { padding: 5px ; margin: 5px ; float: right;}
