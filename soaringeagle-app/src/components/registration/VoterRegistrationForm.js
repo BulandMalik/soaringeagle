@@ -11,7 +11,7 @@ export const VoterRegistrationForm = props => {
     lastName: '',
     address: '',
     city: '',
-    birthDate: '',
+    birthdate: '',
     email: '',
     phone: '',
   });
@@ -53,7 +53,7 @@ export const VoterRegistrationForm = props => {
           </li>
           <li>
             <label> Birth Date: </label>
-            <input type="number" name="birthDate" value={voterRegistrationForm.birthDate} onChange={change} />
+            <input type="text" name="birthdate" value={voterRegistrationForm.birthdate} onChange={change} />
           </li>
           <li>
             <label> Email: </label>

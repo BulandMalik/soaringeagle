@@ -38,6 +38,7 @@ export const createRegisterVoterDoneAction = (voter) => (
     {type: REGISTER_VOTER_DONE_ACTION, payload: voter}
 );
 export const registerVoterFn = (voter) => {
+    console.log(voter);
     //it is the function action object that intercepted by middleware
     //when the middleware invokes this function is passes in the store's dispatch method
     return dispatch => {

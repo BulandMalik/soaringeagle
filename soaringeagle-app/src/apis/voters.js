@@ -68,7 +68,7 @@ export const deleteVoters = (voterIds) => {
             }).then( res => resolve(res) );            
         }));
     });
-    console.log("***************** promises ",promises,"");
+    //console.log("***************** promises ",promises,"");
     return Promise.all(promises);
 }
 /*
