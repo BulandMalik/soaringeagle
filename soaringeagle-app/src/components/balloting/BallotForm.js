@@ -17,24 +17,29 @@ export const BallotForm = (props) => {
     props.onChange(event);
   };
 
+  const handleOnChange = (position) => {
+      console.log(position);
+  }
 
   return (
     <form>
-      {questions?.map(question => 
-        // <QuestionCheckBox key={question.id} question={question} onCheckChange={checkChange} />
-        <label key={question.id}>
-          {question.text}
-          <input type="checkbox"
-                id={question.id}
-                name={question.id}
-                value={question.id}
-                checked={props.checkedState[question.id]}
-                //onChange={() => handleOnChange()}
-                onClick={handleOnClick}
-        />
-        </label>
-      )}
-      <button type="button" onClick={ () => onSubmitBallot(ballot.id)}>Submit</button>
+      <ul className="flex-outer">
+        {questions?.map( (question,index) => 
+          // <QuestionCheckBox key={question.id} question={question} onCheckChange={checkChange} />
+            <li key={index}>
+              <label key={question.id}>{question.text}</label>
+              <input type="checkbox"
+                  id={question.id}
+                  name="ParticipantSelection[]"
+                  value={question.id}
+                  checked={props.checkedState[question.id]}
+                  //onChange={() => handleOnChange(index)}
+                  onClick={handleOnClick}
+              />
+            </li>
+        )}
+        <li className="liBtn"><button type="button" onClick={ () => onSubmitBallot(ballot.id)}>Submit</button></li>
+      </ul>
     </form>
   );
 }

@@ -39,6 +39,11 @@ form {
     margin: 0 auto;    
 }
 
+.election {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 
   .flex-outer,
   .flex-inner {
@@ -116,12 +121,10 @@ form {
   }
 
   .liBtn {
-    width: 50px;
-    align-content: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;    
-  }
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+}
 
 .container {
     position: fixed;
@@ -266,13 +269,13 @@ table#tbl  { border : 1px solid black; }
 #formTbl { border : 1px solid black; padding: 10px ; margin : 20px 1px 20px 2px }
 #formTbl button  { padding: 5px ; margin: 5px ; float: right;}
 
-.homePageContents h1 {
-    display: block;
-    padding: 5px 5px 15px .5em;
-    color: #fff;
+.homePageContents {
+    padding: 5px 5px 1px 1px;
+    color: black;
     font-size: large;
     width: 100%;
-    margin: 10px;
+    margin: 3px;
+    font-size: xxx-large;
 }
 
 .homePageContents li {

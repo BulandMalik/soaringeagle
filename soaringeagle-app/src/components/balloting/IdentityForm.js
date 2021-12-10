@@ -11,8 +11,8 @@ export const IdentityForm = (props) => {
 
   return (
     <form>
-      { props.errorMessage && <div className="" style={{ color: 'red', fontWeight: 'bold' }}>{props.errorMessage}</div>}
-      <ul class="flex-outer">
+      { props.errorMessage && <div className="" style={{ padding:'5px', textAlign:'center', color: 'red', fontWeight: 'bold' }}>{props.errorMessage}</div>}
+      <ul className="flex-outer">
           <li>
             <label> Enter you ID here: </label>
             <input type="text" name="id" value={idForm.id} onChange={change} />

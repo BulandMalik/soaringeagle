@@ -32,7 +32,7 @@ export const BallotingTool = () => {
 
   const handleOnChange = (event) => {
     const id = parseInt(event.target.id,10);
-    //console.log("checkedState:",checkedState, " .... event Id:",id, ", event checked",event.target.checked);
+    console.log("checkedState:",checkedState, " .... event Id:",id, ", event checked",event.target.checked);
 
     let updatedCheckedState = [...checkedState];
     if ( updatedCheckedState.includes(id) ) {
@@ -42,7 +42,7 @@ export const BallotingTool = () => {
     }
     else updatedCheckedState.push(id);
 
-    //console.log("updatedCheckedState:",updatedCheckedState);
+    console.log("updatedCheckedState:",updatedCheckedState);
     setCheckedState(updatedCheckedState);
   };
 
@@ -131,10 +131,10 @@ export const BallotingTool = () => {
 
   return (
     <>
-      <h1>Balloting</h1>
+      <h1 className="homePageContents">Balloting</h1>
       { showIDForm && !showElectionList && <IdentityForm onVerifyId={verifyId} errorMessage={ballotErrorMessage} />}
       
-      { !showIDForm && !showElectionList && !showBallotForm && <button type="button" onClick={Vote}>Vote</button> }
+      { !showIDForm && !showElectionList && !showBallotForm && <ul className="homePageContents"><li><button type="button" onClick={Vote}>Vote</button></li></ul>}
 
       { showElectionList && <ElectionList elections={elections} onSelectElection={selectElection} errorMessage={ballotErrorMessage} />}
       

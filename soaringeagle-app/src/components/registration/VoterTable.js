@@ -25,12 +25,12 @@ export const VoterTable = props => {
 
   const [checkedState, setCheckedState] = useState([]); //new Array(props.voters.length).fill(0)
   
-  console.log("checkedState::::::::",checkedState);
+  //console.log("checkedState::::::::",checkedState);
 
   const handleOnChange = (event) => {
     const id = parseInt(event.target.id,10);
 
-    console.log("checkedState:",checkedState, " .... event Id:",id, ", event checked",event.target.checked);
+    //console.log("checkedState:",checkedState, " .... event Id:",id, ", event checked",event.target.checked);
 
     let updatedCheckedState = [...checkedState];
     if ( updatedCheckedState.includes(id) ) {
@@ -40,7 +40,7 @@ export const VoterTable = props => {
     }
     else updatedCheckedState.push(id);
 
-    console.log("updatedCheckedState:",updatedCheckedState);
+    //console.log("updatedCheckedState:",updatedCheckedState);
     setCheckedState(updatedCheckedState);
   };
 
