@@ -60,6 +60,17 @@
       "voterIds": [
         1
       ]
+    },
+    {
+      "id": 3,
+      "questions": [
+        {
+          "id": 2,
+          "text": "sdsdsdsd",
+          "yesCount": 0
+        }
+      ],
+      "voterIds": []
     }
   ]
 }

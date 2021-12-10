@@ -50,7 +50,7 @@ export const VoterTable = props => {
   }
 
   return (
-    <table>
+    <table className="blueTable">
       <thead>
         <tr>
           {tableHeaders.map(([ header, field ]) => <th key={field}>
