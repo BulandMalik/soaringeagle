@@ -19,25 +19,31 @@ export const ElectionTable = () => {
         }
     }
     
-    const saveElection = () =>{
+    const saveElection = (questionForm) =>{
 
-        if(questions.length<1){
+        if(!questionForm){
             onNewQuestion('');
         }else{
-            let questionArray = [];
-            for(var i=0;i<questions.length;i++){
-                questionArray.push({
-                    id : i+1,
-                    text : questions[i],
-                    yesCount: 0
-                });
+            if(!questionForm.text.trim()){
+                onErrorMessage('No Question was entered');
+            }else{
+                let questionArray = [];
+                let myQuestion=[...questions,questionForm.text]
+                for(var i=0;i<myQuestion.length;i++){
+                    questionArray.push({
+                        id : i+1,
+                        text : myQuestion[i],
+                        yesCount: 0
+                    });
+                }
+                questionArray.shift();
+                onAddElection( { 
+                    id: Math.max(...elections.map(c => c.id), 0 ) + 1 ,
+                    questions: questionArray,
+                    voterIds:[]
+                } );
             }
-            questionArray.shift();
-            onAddElection( { 
-                id: Math.max(...elections.map(c => c.id), 0 ) + 1 ,
-                questions: questionArray,
-                voterIds:[]
-            } );
+
         }
     }
     //console.log("QUESTIONs " , questions);
@@ -66,14 +72,14 @@ export const ElectionTable = () => {
                     
                 }  
                 { questions.length>0
-                    ?<ElectionAddRow key={-1*questions.length} questionID={-1} questionText={''} onQuestion={onQuestion}   />
+                    ?<ElectionAddRow key={-1.*(questions.length+1)} questionID={-1} questionText={''} onQuestion={onQuestion} saveElection={saveElection}  />
                     :<></>               
                 }  
    
                 </tbody>
             </table>
             <br />
-            <button type="button" onClick={()=>saveElection()}  >Create Election</button> 
+            {questions.length<=0?<button type="button" onClick={()=>saveElection()}  >Create Election</button>:<></>}
         </>
         ); 
  };
