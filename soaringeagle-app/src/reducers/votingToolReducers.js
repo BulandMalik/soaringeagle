@@ -19,7 +19,7 @@ export const registeredVotersReducer = ( registeredVoters = [], action) => {
 
 export const itemEditReducer = ( itemId = -1, action) => {
 
-    console.log("itemEditReducer::",itemId, ", action::",action);
+    //console.log("itemEditReducer::",itemId, ", action::",action);
     switch (action.type) {
         case REGISTER_VOTER_REQUEST_ACTION:
         case REPLACE_VOTER_REQUEST_ACTION:

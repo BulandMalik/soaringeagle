@@ -16,8 +16,8 @@ export const useVotingToolStore = () => {
     const { sortCol, sortDir } = useSelector(
         state => state.itemsSort);
 
-    console.log("editId::",editId);
-    console.log("sortCol::",sortCol,", sortDir",sortDir);
+    //console.log("editId::",editId);
+    //console.log("sortCol::",sortCol,", sortDir",sortDir);
 
     const dispatch = useDispatch();
 
