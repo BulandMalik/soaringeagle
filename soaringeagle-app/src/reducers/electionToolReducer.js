@@ -1,8 +1,5 @@
-import { combineReducers } from "redux";
-import { SORT_ASC, SORT_DESC } from '../selectors/itemToolSelectors';
-
 import {
-    ADD_ELECTION_ACTION,
+    // ADD_ELECTION_ACTION,
 	ERROR_MESSAGE_ACTION,
 
 	NEW_QUESTION_ACTION,

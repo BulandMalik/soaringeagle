@@ -4,8 +4,6 @@ import {
     REPLACE_VOTER_REQUEST_ACTION, DELETE_VOTER_REQUEST_ACTION
 } from '../actions/votersActions';
 
-import { combineReducers } from 'redux';
-
 export const registeredVotersReducer = ( registeredVoters = [], action) => {
 
     //console.log("registeredVotersReducer::",registeredVoters, ", action::",action);
@@ -38,8 +36,6 @@ export const itemEditReducer = ( itemId = -1, action) => {
 
 export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, action) => {
 
-    //console.log("itemsSortReducer::",action);
-    //console.log("itemsSort B::",itemsSort);
     if (action.type === SORT_ITEMS_ACTION) {
 
         if (itemsSort.sortDir === 'asc') {
@@ -48,12 +44,5 @@ export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, 
                 return { ...itemsSort, sortCol: action.payload.sortCol, sortDir: 'asc'};
         }
     }
-    //console.log("itemsSort A::",itemsSort);
     return itemsSort;
 }  
-
-export const votingToolReducer = combineReducers({
-    registeredVoters: registeredVotersReducer, //state.registeredVoters are the argument to the reducer
-    itemEditId: itemEditReducer,
-    itemsSort: itemsSortReducer,
-});
