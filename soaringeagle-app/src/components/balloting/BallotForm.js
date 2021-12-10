@@ -13,16 +13,28 @@ export const BallotForm = (props) => {
   //   resetBallotForm();
   // };
 
+  const handleOnClick = (event) => {
+    props.onChange(event);
+  };
+
+
   return (
     <form>
       {questions?.map(question => 
         // <QuestionCheckBox key={question.id} question={question} onCheckChange={checkChange} />
         <label key={question.id}>
           {question.text}
-          <input type="checkbox" name={question.id} value={question.id} />
+          <input type="checkbox"
+                id={question.id}
+                name={question.id}
+                value={question.id}
+                checked={props.checkedState[question.id]}
+                //onChange={() => handleOnChange()}
+                onClick={handleOnClick}
+        />
         </label>
       )}
-      <button type="button" onClick={onSubmitBallot}>Submit</button>
+      <button type="button" onClick={ () => onSubmitBallot(ballot.id)}>Submit</button>
     </form>
   );
 }

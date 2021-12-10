@@ -58,14 +58,15 @@ export const itemsSortReducer = (  itemsSort = {sortCol: 'id', sortDir: 'asc'}, 
     return itemsSort;
 }  
 
-export const errorMessageReducer = (errorMessage = '', action) => {
-    console.log("errorMessageReducer", action);
+export const ballotErrorMessageReducer = (errorMessage = '', action) => {
+    console.log("ballotErrorMessageReducer", action);
    
     if(action.type === VERIFY_ACTION && !action.payload.result) {
-        return "User ID is NOT Valid !";
+        return "Voter ID is NOT Registered !";
     }
 
     if(action.type === CHOOSE_ELECTION_ACTION && action.payload.electionId === -2){
+        console.log("action.payload.electionId === -2", (action.payload.electionId === -2));
         return "You already voted this election !"
     }
     
@@ -132,7 +133,7 @@ export const votingToolReducer = combineReducers({
     registeredVoters: registeredVotersReducer, //state.registeredVoters are the argument to the reducer
     itemEditId: itemEditReducer,
     itemsSort: itemsSortReducer,
-    errorMessage: errorMessageReducer,
+    ballotErrorMessage: ballotErrorMessageReducer,
     showIDForm: showIDFormReducer,
     showElectionList: showElectionListReducer,
     showBallotForm: showBallotFormReducer,

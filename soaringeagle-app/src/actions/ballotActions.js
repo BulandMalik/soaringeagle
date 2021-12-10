@@ -17,9 +17,10 @@ export const SET_DUPLICATE_ELECTION_ACTION = 'SET_DUPLACATE_ELECTION'
 //   type: GET_ALL_ELECTION_IDS_ACTION
 // });
 
-export const createVerifyAction = (result) => ({
-  type: VERIFY_ACTION, payload: { result }
-});
+export const createVerifyAction = (result) => (
+  console.log("createVerifyAction,",result),
+  {type: VERIFY_ACTION, payload: { result }}
+);
 
 export const createStartVotingAction = (showIDForm) => (
   // console.log("createStartVotingAction",showIDForm), 

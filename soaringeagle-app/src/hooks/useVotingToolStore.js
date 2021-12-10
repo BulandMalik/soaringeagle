@@ -29,7 +29,7 @@ export const useVotingToolStore = () => {
     // console.log("editId::",editId);
     // console.log("sortCol::",sortCol,", sortDir",sortDir);
 
-    const errorMessage = useSelector(state => state.errorMessage);
+    const ballotErrorMessage = useSelector(state => state.ballotErrorMessage);
     const showIDForm = useSelector(state => state.showIDForm);
     const showBallotForm = useSelector(state => state.showBallotForm);
     const elections = useSelector(state => state.elections);
@@ -82,7 +82,7 @@ export const useVotingToolStore = () => {
         editId,
         sortCol,
         sortDir,
-        errorMessage,
+        ballotErrorMessage,
         showIDForm,
         showElectionList,
         showBallotForm,
