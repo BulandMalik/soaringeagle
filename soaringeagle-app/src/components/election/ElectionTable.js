@@ -32,7 +32,7 @@ export const ElectionTable = () => {
                 let myQuestion=[...questions,questionForm.text]
                 for(var i=0;i<myQuestion.length;i++){
                     questionArray.push({
-                        id : i+1,
+                        id : i,
                         text : myQuestion[i],
                         yesCount: 0
                     });
